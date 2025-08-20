@@ -57,8 +57,8 @@
     --shadow-accent: 0 8px 30px -8px hsl(15 85% 60% / 0.4);
 
     /* Typography Scale */
-    --font-heading: 'Inter', -apple-system, sans-serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-heading: 'Work Sans', -apple-system, sans-serif;
+    --font-body: 'Work Sans', -apple-system, sans-serif;
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -126,6 +126,35 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Typography Hierarchy with Work Sans Weights */
+  h1, .text-h1 {
+    @apply font-bold tracking-tight;
+  }
+  
+  h2, .text-h2 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h3, .text-h3 {
+    @apply font-semibold;
+  }
+  
+  h4, .text-h4 {
+    @apply font-medium;
+  }
+  
+  .text-body {
+    @apply font-normal;
+  }
+  
+  .text-caption {
+    @apply font-normal text-sm;
+  }
+  
+  .text-overline {
+    @apply font-medium text-xs uppercase tracking-wide;
   }
 }

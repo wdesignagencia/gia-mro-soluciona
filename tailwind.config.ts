@@ -80,8 +80,17 @@ export default {
 				'accent-glow': 'var(--shadow-accent)'
 			},
 			fontFamily: {
-				'heading': 'var(--font-heading)',
-				'body': 'var(--font-body)'
+				'sans': ['Work Sans', 'system-ui', 'sans-serif'],
+				'heading': ['Work Sans', 'system-ui', 'sans-serif'],
+				'body': ['Work Sans', 'system-ui', 'sans-serif']
+			},
+			fontWeight: {
+				'light': '300',
+				'normal': '400',
+				'medium': '500',
+				'semibold': '600',
+				'bold': '700',
+				'extrabold': '800'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

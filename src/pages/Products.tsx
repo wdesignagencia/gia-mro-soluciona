@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
+import { SEOHead } from "@/components/SEOHead";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -173,8 +175,35 @@ const Products = () => {
     selectedCategory === "all" || category.id === selectedCategory
   );
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Produtos Industriais GIA MRO",
+    "description": "Catálogo completo de produtos industriais: mangueiras, correias, lençóis de borracha, plásticos de engenharia e produtos complementares",
+    "brand": {
+      "@type": "Brand",
+      "name": "GIA MRO"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "GIA MRO"
+      }
+    },
+    "category": "Industrial Supplies"
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Produtos Industriais | Mangueiras, Correias, Lençóis de Borracha | GIA MRO"
+        description="Catálogo completo de produtos industriais: mangueiras, correias, lençóis de borracha, plásticos de engenharia. Estoque em São Paulo e Jundiaí. Entrega rápida."
+        keywords="mangueiras industriais, correias industriais, lençóis de borracha, plásticos de engenharia, produtos industriais MRO, São Paulo, Jundiaí"
+        url="https://giamro.com.br/produtos"
+        structuredData={productStructuredData}
+      />
       <Navigation />
       
       <main className="pt-8">
@@ -210,86 +239,88 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Products Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-16">
-              {filteredCategories.map((category, categoryIndex) => (
-                <div 
-                  key={category.id} 
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${categoryIndex * 0.1}s` }}
-                >
+        {/* Products Stack Section */}
+        <section className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+          <ScrollStack 
+            className="w-full"
+            itemDistance={120}
+            itemScale={0.04}
+            itemStackDistance={40}
+            stackPosition="15%"
+            scaleEndPosition="5%"
+            baseScale={0.82}
+            rotationAmount={2}
+            blurAmount={0.5}
+          >
+            {filteredCategories.map((category, categoryIndex) => (
+              <ScrollStackItem 
+                key={category.id}
+                itemClassName="bg-gradient-to-br from-background to-primary/5 border-2 border-primary/20 backdrop-blur-sm"
+              >
+                <div className="h-full flex flex-col justify-between">
                   {/* Category Header */}
-                  <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-3 bg-primary/10 text-primary rounded-full px-6 py-3 text-lg font-medium mb-4">
-                      <span className="text-2xl">{category.icon}</span>
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center gap-3 bg-primary/15 text-primary rounded-full px-6 py-3 text-lg font-bold mb-4 shadow-lg">
+                      <span className="text-3xl">{category.icon}</span>
                       {category.title}
                     </div>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-muted-foreground text-lg font-medium max-w-xl mx-auto">
                       {category.description}
                     </p>
                   </div>
 
-                  {/* Products Grid */}
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {category.products.map((product, productIndex) => (
-                      <Card 
+                  {/* Featured Products */}
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 flex-1">
+                    {category.products.slice(0, 4).map((product, productIndex) => (
+                      <div 
                         key={productIndex}
-                        className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 border-border/50"
+                        className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border/30 hover:shadow-lg transition-all duration-300 hover:scale-105"
                       >
-                        <CardHeader className="pb-4">
-                          <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                            {product.name}
-                          </CardTitle>
-                          <CardDescription className="text-muted-foreground">
-                            {product.description}
-                          </CardDescription>
-                        </CardHeader>
+                        <h4 className="font-bold text-foreground text-sm mb-2 leading-tight">
+                          {product.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                          {product.description}
+                        </p>
                         
-                        <CardContent className="space-y-4">
-                          {/* Specifications */}
-                          <div>
-                            <h4 className="font-medium text-foreground mb-2">Especificações:</h4>
-                            <div className="flex flex-wrap gap-1">
-                              {product.specs.map((spec, idx) => (
-                                <Badge key={idx} variant="secondary" className="text-xs">
-                                  {spec}
-                                </Badge>
-                              ))}
-                            </div>
+                        {/* Key specs */}
+                        <div className="mb-3">
+                          <div className="flex flex-wrap gap-1">
+                            {product.specs.slice(0, 2).map((spec, idx) => (
+                              <Badge key={idx} variant="secondary" className="text-xs px-2 py-1">
+                                {spec}
+                              </Badge>
+                            ))}
                           </div>
+                        </div>
 
-                          {/* Applications */}
-                          <div>
-                            <h4 className="font-medium text-foreground mb-2">Aplicações:</h4>
-                            <ul className="text-sm text-muted-foreground space-y-1">
-                              {product.applications.map((app, idx) => (
-                                <li key={idx} className="flex items-center gap-2">
-                                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                  {app}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                          >
-                            <Package className="h-4 w-4 mr-2" />
-                            Solicitar Orçamento
-                            <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </CardContent>
-                      </Card>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full text-xs h-8 hover:bg-primary hover:text-primary-foreground transition-colors"
+                        >
+                          <Package className="h-3 w-3 mr-1" />
+                          Ver Detalhes
+                        </Button>
+                      </div>
                     ))}
                   </div>
+
+                  {/* CTA Button */}
+                  <div className="text-center mt-6">
+                    <Button 
+                      variant="industrial" 
+                      size="lg"
+                      className="shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <ArrowRight className="h-5 w-5 mr-2" />
+                      Ver Todos os Produtos da Categoria
+                    </Button>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
         </section>
 
         {/* Custom Development CTA */}

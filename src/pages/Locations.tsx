@@ -3,7 +3,30 @@ import { MapPin, Phone, Clock, Truck, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SEOHead } from "@/components/SEOHead";
 const Locations = () => {
+  const locationsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GIA MRO",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR",
+        "description": "Região do Cambuci - São Paulo/SP"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Jundiaí", 
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      }
+    ],
+    "areaServed": ["São Paulo", "Jundiaí", "Grande São Paulo", "ABC Paulista", "Região de Campinas"]
+  };
+
   const locations = [{
     id: "matriz",
     name: "Matriz - São Paulo",
@@ -57,6 +80,13 @@ const Locations = () => {
     highlight: "Logística especializada"
   }];
   return <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Localidades | São Paulo e Jundiaí | Entrega Gratuita 100km | GIA MRO"
+        description="GIA MRO com unidades em São Paulo (Cambuci) e Jundiaí. Entrega gratuita até 100km, cobertura nacional. Atendimento especializado em suprimentos industriais."
+        keywords="localidades GIA MRO, São Paulo Cambuci, Jundiaí filial, entrega gratuita 100km, cobertura nacional suprimentos"
+        url="https://giamro.com.br/localidades"
+        structuredData={locationsStructuredData}
+      />
       <Navigation />
       
       <main className="pt-8">

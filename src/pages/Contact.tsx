@@ -8,8 +8,26 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from "@/components/SEOHead";
 
 const Contact = () => {
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "GIA MRO",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-94754-3023",
+        "email": "contato@giamro.com.br",
+        "contactType": "customer service",
+        "availableLanguage": "Portuguese",
+        "hoursAvailable": "Mo-Fr 08:00-18:00"
+      }
+    }
+  };
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -154,6 +172,13 @@ Enviado através do site www.giamro.com.br`;
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Contato | Solicite Orçamento Gratuito | GIA MRO Suprimentos Industriais"
+        description="Entre em contato com a GIA MRO: telefone (11) 94754-3023, WhatsApp 24h, e-mail contato@giamro.com.br. Orçamento gratuito e atendimento especializado."
+        keywords="contato GIA MRO, orçamento gratuito, telefone industrial, WhatsApp suprimentos, São Paulo Jundiaí"
+        url="https://giamro.com.br/contato"
+        structuredData={contactStructuredData}
+      />
       <Navigation />
       
       <main className="pt-8">

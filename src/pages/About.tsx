@@ -15,9 +15,9 @@ const About = () => {
       description: "Nascimento da empresa com foco em soluções completas"
     },
     {
-      year: "2024",
-      title: "Expansão Nacional",
-      description: "Consolidação como referência em soluções MRO"
+      year: "2023",
+      title: "Expansão Regional",
+      description: "Criação do ponto de apoio em Jundiaí para melhor atendimento"
     }
   ];
 

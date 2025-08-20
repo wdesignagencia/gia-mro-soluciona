@@ -67,6 +67,18 @@ const Contact = () => {
     }));
   };
 
+  const handleContactAction = (method: any) => {
+    if (method.title === "Telefone") {
+      window.open(`tel:${method.contact}`, '_self');
+    } else if (method.title === "WhatsApp") {
+      const message = "Olá! Gostaria de mais informações sobre os produtos GIA MRO.";
+      const whatsappNumber = "5511947543023";
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    } else if (method.title === "E-mail") {
+      window.open(`mailto:${method.contact}?subject=Contato pelo site GIA MRO`, '_self');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -188,6 +200,7 @@ Enviado através do site www.giamro.com.br`;
                       variant="industrial" 
                       size="sm" 
                       className="w-full"
+                      onClick={() => handleContactAction(method)}
                     >
                       {method.action}
                     </Button>

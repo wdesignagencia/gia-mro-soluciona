@@ -17,8 +17,8 @@ const Locations = () => {
         fullAddress: "Região do Cambuci - São Paulo/SP"
       },
       contact: {
-        phone: "+55 (11) 99999-9999",
-        email: "matriz@giamro.com.br"
+        phone: "+55 (11) 94754-3023",
+        email: "vendas@giamro.com.br"
       },
       services: [
         "Vendas e atendimento comercial",
@@ -31,18 +31,18 @@ const Locations = () => {
       isPrimary: true
     },
     {
-      id: "filial",
-      name: "Filial - Jundiaí",
-      type: "Unidade Regional",
+      id: "ponto-apoio",
+      name: "Ponto de Apoio - Jundiaí",
+      type: "Ponto de Apoio Regional",
       address: {
-        district: "Centro",
+        district: "",
         city: "Jundiaí",
         state: "SP",
         fullAddress: "Jundiaí/SP"
       },
       contact: {
-        phone: "+55 (11) 88888-8888",
-        email: "jundiai@giamro.com.br"
+        phone: "+55 (11) 94754-3023",
+        email: "vendas@giamro.com.br"
       },
       services: [
         "Atendimento regional",

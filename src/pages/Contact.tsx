@@ -38,7 +38,7 @@ const Contact = () => {
       icon: Phone,
       title: "Telefone",
       description: "Ligue diretamente para nossa equipe",
-      contact: "+55 (11) 99999-9999",
+      contact: "+55 (11) 94754-3023",
       action: "Ligar Agora",
       available: "Seg-Sex: 08:00-18:00"
     },
@@ -46,7 +46,7 @@ const Contact = () => {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Converse conosco pelo WhatsApp",
-      contact: "+55 (11) 99999-9999",
+      contact: "+55 (11) 94754-3023",
       action: "Abrir WhatsApp",
       available: "Disponível 24h"
     },
@@ -54,7 +54,7 @@ const Contact = () => {
       icon: Mail,
       title: "E-mail",
       description: "Envie sua solicitação por e-mail",
-      contact: "contato@giamro.com.br",
+      contact: "vendas@giamro.com.br",
       action: "Enviar E-mail",
       available: "Resposta em até 24h"
     }
@@ -85,13 +85,37 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // Create WhatsApp message
+    const productLabel = productOptions.find(p => p.value === formData.produtoInteresse)?.label || formData.produtoInteresse;
+    const otherProduct = formData.produtoInteresse === 'outros' ? `\n*Produto Específico:* ${formData.outrosProduto}` : '';
+    
+    const message = `🏭 *SOLICITAÇÃO DE ORÇAMENTO - GIA MRO*
+
+*Nome:* ${formData.nomeCompleto}
+*Empresa:* ${formData.empresa}
+*Telefone:* ${formData.telefone}
+${formData.email ? `*E-mail:* ${formData.email}` : ''}
+
+*Produto de Interesse:* ${productLabel}${otherProduct}
+
+${formData.quantidadeEspecificacoes ? `*Especificações:* ${formData.quantidadeEspecificacoes}` : ''}
+
+*Mensagem:* ${formData.mensagem}
+
+---
+Enviado através do site www.giamro.com.br`;
+
+    // Send to WhatsApp
+    const whatsappNumber = "5511947543023";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
       
       toast({
-        title: "Solicitação enviada com sucesso!",
-        description: "Nossa equipe entrará em contato em breve.",
+        title: "Redirecionando para WhatsApp!",
+        description: "Sua mensagem foi preparada. Nossa equipe responderá em breve!",
       });
 
       // Reset form
@@ -107,8 +131,8 @@ const Contact = () => {
       });
     } catch (error) {
       toast({
-        title: "Erro ao enviar",
-        description: "Tente novamente ou entre em contato por telefone.",
+        title: "Erro ao abrir WhatsApp",
+        description: "Tente novamente ou entre em contato diretamente: (11) 94754-3023",
         variant: "destructive",
       });
     } finally {
@@ -351,7 +375,7 @@ const Contact = () => {
                       🔒 Seus dados estão seguros conosco e não serão compartilhados
                     </p>
                     <p>
-                      ⚡ Resposta em até <strong className="text-foreground">24 horas</strong> em dias úteis
+                      ⚡ Resposta <strong className="text-foreground">IMEDIATA</strong> via WhatsApp!
                     </p>
                   </div>
                 </form>

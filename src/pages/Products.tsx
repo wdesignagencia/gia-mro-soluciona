@@ -190,18 +190,9 @@ const Products = () => {
                 de manutenção, reparo e operação da sua empresa
               </p>
 
-              {/* Search and Filter */}
-              <div className="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                  <Input
-                    placeholder="Buscar produtos..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
-                  />
-                </div>
-                <div className="flex gap-2 flex-wrap justify-center">
+              {/* Filter Categories */}
+              <div className="max-w-4xl mx-auto">
+                <div className="flex gap-2 flex-wrap justify-center mb-6">
                   {categories.map((category) => (
                     <Button
                       key={category.id}

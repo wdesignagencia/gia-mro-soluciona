@@ -3,92 +3,60 @@ import { MapPin, Phone, Clock, Truck, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
 const Locations = () => {
-  const locations = [
-    {
-      id: "matriz",
-      name: "Matriz - São Paulo",
-      type: "Sede Principal",
-      address: {
-        district: "Cambuci",
-        city: "São Paulo",
-        state: "SP",
-        fullAddress: "Região do Cambuci - São Paulo/SP"
-      },
-      contact: {
-        phone: "+55 (11) 94754-3023",
-        email: "vendas@giamro.com.br"
-      },
-      services: [
-        "Vendas e atendimento comercial",
-        "Desenvolvimento de produtos",
-        "Suporte técnico especializado",
-        "Estoque completo de produtos",
-        "Entrega expressa"
-      ],
-      coverage: "100km",
-      isPrimary: true
+  const locations = [{
+    id: "matriz",
+    name: "Matriz - São Paulo",
+    type: "Sede Principal",
+    address: {
+      district: "Cambuci",
+      city: "São Paulo",
+      state: "SP",
+      fullAddress: "Região do Cambuci - São Paulo/SP"
     },
-    {
-      id: "ponto-apoio",
-      name: "Ponto de Apoio - Jundiaí",
-      type: "Ponto de Apoio Regional",
-      address: {
-        district: "",
-        city: "Jundiaí",
-        state: "SP",
-        fullAddress: "Jundiaí/SP"
-      },
-      contact: {
-        phone: "+55 (11) 94754-3023",
-        email: "vendas@giamro.com.br"
-      },
-      services: [
-        "Atendimento regional",
-        "Estoque local",
-        "Entrega rápida",
-        "Suporte técnico",
-        "Desenvolvimento conjunto"
-      ],
-      coverage: "100km",
-      isPrimary: false
-    }
-  ];
-
-  const coverageAreas = [
-    "Grande São Paulo",
-    "ABC Paulista",
-    "Região de Campinas",
-    "Vale do Paraíba",
-    "Baixada Santista",
-    "Interior de São Paulo",
-    "Atendimento Nacional"
-  ];
-
-  const deliveryFeatures = [
-    {
-      icon: Truck,
-      title: "Entrega Gratuita",
-      description: "Até 100km de cada unidade",
-      highlight: "Sem custo adicional"
+    contact: {
+      phone: "+55 (11) 99999-9999",
+      email: "matriz@giamro.com.br"
     },
-    {
-      icon: Clock,
-      title: "Entrega Expressa",
-      description: "Produtos em estoque",
-      highlight: "Mesmo dia"
+    services: ["Vendas e atendimento comercial", "Desenvolvimento de produtos", "Suporte técnico especializado", "Estoque completo de produtos", "Entrega expressa"],
+    coverage: "100km",
+    isPrimary: true
+  }, {
+    id: "filial",
+    name: "Filial - Jundiaí",
+    type: "Unidade Regional",
+    address: {
+      district: "Centro",
+      city: "Jundiaí",
+      state: "SP",
+      fullAddress: "Jundiaí/SP"
     },
-    {
-      icon: MapPin,
-      title: "Cobertura Nacional",
-      description: "Atendemos todo o Brasil",
-      highlight: "Logística especializada"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+    contact: {
+      phone: "+55 (11) 88888-8888",
+      email: "jundiai@giamro.com.br"
+    },
+    services: ["Atendimento regional", "Estoque local", "Entrega rápida", "Suporte técnico", "Desenvolvimento conjunto"],
+    coverage: "100km",
+    isPrimary: false
+  }];
+  const coverageAreas = ["Grande São Paulo", "ABC Paulista", "Região de Campinas", "Vale do Paraíba", "Baixada Santista", "Interior de São Paulo", "Atendimento Nacional"];
+  const deliveryFeatures = [{
+    icon: Truck,
+    title: "Entrega Gratuita",
+    description: "Até 100km de cada unidade",
+    highlight: "Sem custo adicional"
+  }, {
+    icon: Clock,
+    title: "Entrega Expressa",
+    description: "Produtos em estoque",
+    highlight: "Mesmo dia"
+  }, {
+    icon: MapPin,
+    title: "Cobertura Nacional",
+    description: "Atendemos todo o Brasil",
+    highlight: "Logística especializada"
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       <main className="pt-8">
@@ -111,24 +79,17 @@ const Locations = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
-              {locations.map((location, index) => (
-                <Card 
-                  key={location.id}
-                  className={`group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 border-border/50 ${
-                    location.isPrimary ? 'ring-2 ring-primary/20' : ''
-                  }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {locations.map((location, index) => <Card key={location.id} className={`group hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 border-border/50 ${location.isPrimary ? 'ring-2 ring-primary/20' : ''}`} style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                         <MapPin className="h-6 w-6 text-white" />
                       </div>
-                      {location.isPrimary && (
-                        <Badge className="bg-accent text-accent-foreground">
+                      {location.isPrimary && <Badge className="bg-accent text-accent-foreground">
                           Sede Principal
-                        </Badge>
-                      )}
+                        </Badge>}
                     </div>
                     <CardTitle className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {location.name}
@@ -172,12 +133,10 @@ const Locations = () => {
                     <div>
                       <h4 className="font-semibold text-foreground mb-3">Serviços Oferecidos:</h4>
                       <ul className="space-y-2">
-                        {location.services.map((service, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        {location.services.map((service, idx) => <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
                             <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
                             {service}
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
                     </div>
 
@@ -193,26 +152,14 @@ const Locations = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                      <Button 
-                        variant="industrial" 
-                        className="flex-1"
-                        size="sm"
-                      >
+                      <Button variant="industrial" className="flex-1" size="sm">
                         <Phone className="h-4 w-4 mr-2" />
                         Entrar em Contato
                       </Button>
-                      <Button 
-                        variant="outline" 
-                        className="flex-1"
-                        size="sm"
-                      >
-                        <MapPin className="h-4 w-4 mr-2" />
-                        Ver no Mapa
-                      </Button>
+                      
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -231,12 +178,9 @@ const Locations = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {deliveryFeatures.map((feature, index) => (
-                <Card 
-                  key={index}
-                  className="text-center hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 border-border/50"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {deliveryFeatures.map((feature, index) => <Card key={index} className="text-center hover:shadow-industrial transition-all duration-300 hover:-translate-y-1 border-border/50" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardHeader>
                     <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4">
                       <feature.icon className="h-8 w-8 text-white" />
@@ -251,8 +195,7 @@ const Locations = () => {
                       {feature.highlight}
                     </Badge>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             {/* Coverage Areas */}
@@ -261,16 +204,12 @@ const Locations = () => {
                 Regiões Atendidas
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {coverageAreas.map((area, index) => (
-                  <div 
-                    key={index}
-                    className="flex items-center gap-2 p-3 bg-gradient-steel rounded-lg"
-                    style={{ animationDelay: `${index * 0.05}s` }}
-                  >
+                {coverageAreas.map((area, index) => <div key={index} className="flex items-center gap-2 p-3 bg-gradient-steel rounded-lg" style={{
+                animationDelay: `${index * 0.05}s`
+              }}>
                     <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
                     <span className="text-sm font-medium text-foreground">{area}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <div className="text-center mt-8">
                 <p className="text-muted-foreground mb-4">
@@ -304,8 +243,6 @@ const Locations = () => {
           </div>
         </section>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Locations;

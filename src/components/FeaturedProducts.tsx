@@ -57,7 +57,7 @@ const FeaturedProducts = () => {
           {productCategories.map((category, index) => (
             <Card 
               key={category.id} 
-              className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur-sm"
+              className="group hover:shadow-industrial transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur-sm flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
@@ -72,9 +72,9 @@ const FeaturedProducts = () => {
                 </CardDescription>
               </CardHeader>
               
-              <CardContent className="pt-0">
+              <CardContent className="pt-0 flex flex-col h-full">
                 {/* Features List */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-1">
                   {category.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
@@ -86,7 +86,7 @@ const FeaturedProducts = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors mt-auto"
                 >
                   Ver Detalhes
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />

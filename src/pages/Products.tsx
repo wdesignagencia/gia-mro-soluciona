@@ -262,42 +262,44 @@ const Products = () => {
                     {category.products.map((product, productIndex) => (
                       <div 
                         key={productIndex}
-                        className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/30 hover:shadow-lg transition-all duration-300 hover:scale-105"
+                        className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/30 hover:shadow-lg transition-all duration-300 hover:scale-105 flex flex-col"
                       >
-                        <h4 className="font-bold text-foreground text-lg mb-3 leading-tight">
-                          {product.name}
-                        </h4>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                          {product.description}
-                        </p>
-                        
-                        {/* Key specs */}
-                        <div className="mb-4">
-                          <div className="flex flex-wrap gap-2">
-                            {product.specs.slice(0, 3).map((spec, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                                {spec}
-                              </Badge>
-                            ))}
+                        <div className="flex-1">
+                          <h4 className="font-bold text-foreground text-lg mb-3 leading-tight">
+                            {product.name}
+                          </h4>
+                          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                            {product.description}
+                          </p>
+                          
+                          {/* Key specs */}
+                          <div className="mb-4">
+                            <div className="flex flex-wrap gap-2">
+                              {product.specs.slice(0, 3).map((spec, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
+                                  {spec}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        {/* Applications */}
-                        <div className="mb-4">
-                          <h5 className="text-xs font-semibold text-muted-foreground mb-2">APLICAÇÕES:</h5>
-                          <div className="flex flex-wrap gap-1">
-                            {product.applications.slice(0, 2).map((app, idx) => (
-                              <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                                {app}
-                              </span>
-                            ))}
+                          {/* Applications */}
+                          <div className="mb-4">
+                            <h5 className="text-xs font-semibold text-muted-foreground mb-2">APLICAÇÕES:</h5>
+                            <div className="flex flex-wrap gap-1">
+                              {product.applications.slice(0, 2).map((app, idx) => (
+                                <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                                  {app}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
                         <Button 
                           variant="outline" 
                           size="sm" 
-                          className="w-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                          className="w-full hover:bg-primary hover:text-primary-foreground transition-colors mt-auto"
                           onClick={() => window.open('/contato', '_self')}
                         >
                           <Package className="h-4 w-4 mr-2" />

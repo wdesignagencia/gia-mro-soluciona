@@ -39,7 +39,7 @@ const Locations = () => {
     },
     contact: {
       phone: "+55 (11) 94754-3023",
-      email: "vendas@giamro.com.br"
+      email: "contato@giamro.com.br"
     },
     services: ["Vendas e atendimento comercial", "Desenvolvimento de produtos", "Suporte técnico especializado", "Estoque completo de produtos", "Entrega expressa"],
     coverage: "100km",
@@ -56,7 +56,7 @@ const Locations = () => {
     },
     contact: {
       phone: "+55 (11) 94754-3023",
-      email: "vendas@giamro.com.br"
+      email: "contato@giamro.com.br"
     },
     services: ["Atendimento regional", "Estoque local", "Entrega rápida", "Suporte técnico", "Desenvolvimento conjunto"],
     coverage: "100km",

@@ -78,22 +78,34 @@ const Products = () => {
       color: "bg-purple-500",
       products: [
         {
-          name: "Lençóis de Borracha Natural",
-          description: "Flexibilidade superior para vedações",
-          specs: ["1mm a 50mm", "Diversas durezas", "NBR, EPDM, Neoprene"],
-          applications: ["Vedações", "Juntas", "Revestimentos"]
+          name: "Lençóis de Borracha Comum",
+          description: "Solução econômica para vedações gerais",
+          specs: ["1mm a 50mm", "Boa flexibilidade", "Custo-benefício"],
+          applications: ["Vedações simples", "Proteções", "Isolamento"]
+        },
+        {
+          name: "Lençóis de Borracha Sintética (NBR)",
+          description: "Resistência a óleos e combustíveis",
+          specs: ["NBR", "Resistente a óleo", "Diversas durezas"],
+          applications: ["Vedações automotivas", "Tanques", "Equipamentos"]
+        },
+        {
+          name: "Lençóis de Neoprene",
+          description: "Excelente resistência ao ozônio e intempéries",
+          specs: ["CR", "Resistente ao clima", "Flexível a baixas temperaturas"],
+          applications: ["Vedações externas", "Juntas marítimas", "Isolamento"]
+        },
+        {
+          name: "Lençóis de EPDM",
+          description: "Superior resistência ao calor e envelhecimento",
+          specs: ["EPDM", "Resistente a vapor", "Longa durabilidade"],
+          applications: ["Vedações de alta temperatura", "Automotivo", "Construção"]
         },
         {
           name: "Mantas Antiderrapantes",
           description: "Segurança e aderência em pisos industriais",
           specs: ["Ranhuras diversas", "Resistente a óleo", "Diferentes cores"],
           applications: ["Pisos", "Rampas", "Plataformas"]
-        },
-        {
-          name: "Lençóis para Prensa",
-          description: "Resistência extrema para aplicações de prensagem",
-          specs: ["Alta dureza", "Resistente ao calor", "Espessuras especiais"],
-          applications: ["Prensas", "Vulcanização", "Moldagem"]
         }
       ]
     },

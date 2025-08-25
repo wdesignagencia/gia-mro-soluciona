@@ -102,7 +102,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Validate required fields
-    const requiredFields = ['nomeCompleto', 'empresa', 'telefone', 'produtoInteresse', 'mensagem'];
+    const requiredFields = ['nomeCompleto', 'empresa', 'telefone', 'email', 'produtoInteresse', 'mensagem'];
     const missingFields = requiredFields.filter(field => !formData[field]);
     
     if (missingFields.length > 0) {
@@ -307,13 +307,16 @@ Enviado através do site www.giamro.com.br`;
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-foreground">E-mail</Label>
+                      <Label htmlFor="email" className="text-foreground">
+                        E-mail <span className="text-destructive">*</span>
+                      </Label>
                       <Input
                         id="email"
                         type="email"
                         placeholder="seu@email.com"
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}
+                        required
                       />
                     </div>
                   </div>

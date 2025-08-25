@@ -274,66 +274,125 @@ const Products = () => {
                     {category.products.map((product, productIndex) => (
                       <div 
                         key={productIndex}
-                        className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/30 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] flex flex-col lg:flex-row gap-6 items-start"
+                        className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/30 hover:shadow-lg transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02]"
                       >
-                        {/* Product Icon/Visual */}
-                        <div className="flex-shrink-0">
-                          <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center">
-                            <span className="text-3xl">{category.icon}</span>
-                          </div>
-                        </div>
-
-                        {/* Product Content */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                            {/* Main Info */}
-                            <div className="flex-1">
-                              <h4 className="font-bold text-foreground text-xl mb-2 leading-tight">
+                        {/* Mobile Layout */}
+                        <div className="flex flex-col sm:hidden space-y-4">
+                          {/* Mobile Header */}
+                          <div className="flex items-center gap-4">
+                            <div className="flex-shrink-0">
+                              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center">
+                                <span className="text-2xl">{category.icon}</span>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-bold text-foreground text-lg mb-1 leading-tight">
                                 {product.name}
                               </h4>
-                              <p className="text-muted-foreground mb-4 text-base leading-relaxed">
+                              <p className="text-muted-foreground text-sm leading-relaxed">
                                 {product.description}
                               </p>
-                              
-                              {/* Specs and Applications in horizontal layout */}
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {/* Key specs */}
-                                <div>
-                                  <h5 className="text-sm font-semibold text-foreground mb-2">ESPECIFICAÇÕES:</h5>
-                                  <div className="flex flex-wrap gap-2">
-                                    {product.specs.map((spec, idx) => (
-                                      <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
-                                        {spec}
-                                      </Badge>
-                                    ))}
-                                  </div>
-                                </div>
+                            </div>
+                          </div>
 
-                                {/* Applications */}
-                                <div>
-                                  <h5 className="text-sm font-semibold text-foreground mb-2">APLICAÇÕES:</h5>
-                                  <div className="flex flex-wrap gap-1">
-                                    {product.applications.map((app, idx) => (
-                                      <span key={idx} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
-                                        {app}
-                                      </span>
-                                    ))}
-                                  </div>
-                                </div>
+                          {/* Mobile Specs */}
+                          <div className="space-y-3">
+                            <div>
+                              <h5 className="text-xs font-semibold text-foreground mb-2">ESPECIFICAÇÕES:</h5>
+                              <div className="flex flex-wrap gap-1">
+                                {product.specs.map((spec, idx) => (
+                                  <Badge key={idx} variant="secondary" className="text-xs px-2 py-1">
+                                    {spec}
+                                  </Badge>
+                                ))}
                               </div>
                             </div>
 
-                            {/* CTA Button */}
-                            <div className="flex-shrink-0 lg:ml-6">
-                              <Button 
-                                variant="outline" 
-                                size="lg" 
-                                className="w-full lg:w-auto hover:bg-primary hover:text-primary-foreground transition-colors px-8 py-3"
-                                onClick={() => window.open('/contato', '_self')}
-                              >
-                                <Package className="h-5 w-5 mr-2" />
-                                Solicitar Orçamento
-                              </Button>
+                            <div>
+                              <h5 className="text-xs font-semibold text-foreground mb-2">APLICAÇÕES:</h5>
+                              <div className="flex flex-wrap gap-1">
+                                {product.applications.map((app, idx) => (
+                                  <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                                    {app}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Mobile Button */}
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="w-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                            onClick={() => window.open('/contato', '_self')}
+                          >
+                            <Package className="h-4 w-4 mr-2" />
+                            Solicitar Orçamento
+                          </Button>
+                        </div>
+
+                        {/* Desktop/Tablet Layout */}
+                        <div className="hidden sm:flex gap-6 items-start">
+                          {/* Product Icon/Visual */}
+                          <div className="flex-shrink-0">
+                            <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center">
+                              <span className="text-3xl">{category.icon}</span>
+                            </div>
+                          </div>
+
+                          {/* Product Content */}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                              {/* Main Info */}
+                              <div className="flex-1">
+                                <h4 className="font-bold text-foreground text-xl mb-2 leading-tight">
+                                  {product.name}
+                                </h4>
+                                <p className="text-muted-foreground mb-4 text-base leading-relaxed">
+                                  {product.description}
+                                </p>
+                                
+                                {/* Specs and Applications in horizontal layout */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                  {/* Key specs */}
+                                  <div>
+                                    <h5 className="text-sm font-semibold text-foreground mb-2">ESPECIFICAÇÕES:</h5>
+                                    <div className="flex flex-wrap gap-2">
+                                      {product.specs.map((spec, idx) => (
+                                        <Badge key={idx} variant="secondary" className="text-xs px-3 py-1">
+                                          {spec}
+                                        </Badge>
+                                      ))}
+                                    </div>
+                                  </div>
+
+                                  {/* Applications */}
+                                  <div>
+                                    <h5 className="text-sm font-semibold text-foreground mb-2">APLICAÇÕES:</h5>
+                                    <div className="flex flex-wrap gap-1">
+                                      {product.applications.map((app, idx) => (
+                                        <span key={idx} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
+                                          {app}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* CTA Button */}
+                              <div className="flex-shrink-0 lg:ml-6">
+                                <Button 
+                                  variant="outline" 
+                                  size="lg" 
+                                  className="w-full lg:w-auto hover:bg-primary hover:text-primary-foreground transition-colors px-8 py-3"
+                                  onClick={() => window.open('/contato', '_self')}
+                                >
+                                  <Package className="h-5 w-5 mr-2" />
+                                  Solicitar Orçamento
+                                </Button>
+                              </div>
                             </div>
                           </div>
                         </div>

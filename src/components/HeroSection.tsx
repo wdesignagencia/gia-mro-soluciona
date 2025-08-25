@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-industrial.jpg";
+import heroImage from "@/assets/hero-industrial-new.jpg";
 
 const HeroSection = () => {
   const differentials = [
@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src="/lovable-uploads/97b2a341-3ed2-4729-9e9c-be4a92d52607.png"
           alt="Instalações industriais modernas da GIA MRO"
           className="w-full h-full object-cover"
         />

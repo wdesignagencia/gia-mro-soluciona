@@ -176,7 +176,7 @@ const Products = () => {
     { id: "mangueiras", name: "Mangueiras" },
     { id: "correias", name: "Correias" },
     { id: "lencois", name: "Lençóis" },
-    { id: "plasticos", name: "Plásticos" },
+    { id: "plasticos", name: "Plásticos de Engenharia" },
     { id: "complementares", name: "Complementares" }
   ];
 

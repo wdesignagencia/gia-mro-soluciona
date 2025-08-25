@@ -42,8 +42,18 @@ const KeyDifferentials = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/71bc1e17-59f6-46a3-8a2a-70f543a66b36.png"
+          alt="Industrial hoses background"
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-background/80"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-2 text-sm font-medium mb-6">

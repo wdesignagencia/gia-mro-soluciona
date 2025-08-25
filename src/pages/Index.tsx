@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import KeyDifferentials from "@/components/KeyDifferentials";
+import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 
 const Index = () => {
@@ -69,6 +70,7 @@ const Index = () => {
         <KeyDifferentials />
         <FeaturedProducts />
       </main>
+      <Footer />
     </div>
   );
 };

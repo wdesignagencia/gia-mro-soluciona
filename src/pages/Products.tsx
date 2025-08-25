@@ -137,6 +137,27 @@ const Products = () => {
       ]
     },
     {
+      id: "vedacoes",
+      title: "Vedações",
+      description: "Soluções especializadas para vedação industrial",
+      icon: "🔒",
+      color: "bg-indigo-500",
+      products: [
+        {
+          name: "Papelões Hidráulicos",
+          description: "Vedação para sistemas hidráulicos",
+          specs: ["Livres de amianto", "Diversas pressões", "Temperaturas elevadas"],
+          applications: ["Juntas", "Vedações", "Isolamento"]
+        },
+        {
+          name: "Gaxetas",
+          description: "Vedação precisa para equipamentos rotativos",
+          specs: ["Grafite, PTFE", "Diversas seções", "Alta performance"],
+          applications: ["Bombas", "Válvulas", "Compressores"]
+        }
+      ]
+    },
+    {
       id: "complementares",
       title: "Produtos Complementares",
       description: "Soluções adicionais para completar sua operação",
@@ -154,18 +175,6 @@ const Products = () => {
           description: "Proteção resistente e durável",
           specs: ["Impermeável", "Anti-UV", "Reforçado"],
           applications: ["Caminhões", "Máquinas", "Estoque"]
-        },
-        {
-          name: "Papelões Hidráulicos",
-          description: "Vedação para sistemas hidráulicos",
-          specs: ["Livres de amianto", "Diversas pressões", "Temperaturas elevadas"],
-          applications: ["Juntas", "Vedações", "Isolamento"]
-        },
-        {
-          name: "Gaxetas",
-          description: "Vedação precisa para equipamentos rotativos",
-          specs: ["Grafite, PTFE", "Diversas seções", "Alta performance"],
-          applications: ["Bombas", "Válvulas", "Compressores"]
         }
       ]
     }
@@ -177,6 +186,7 @@ const Products = () => {
     { id: "correias", name: "Correias" },
     { id: "lencois", name: "Lençóis" },
     { id: "plasticos", name: "Plásticos de Engenharia" },
+    { id: "vedacoes", name: "Vedações" },
     { id: "complementares", name: "Complementares" }
   ];
 

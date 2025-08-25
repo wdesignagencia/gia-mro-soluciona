@@ -74,7 +74,7 @@ const Contact = () => {
       description: "Envie sua solicitação por e-mail",
       contact: "vendas@giamro.com.br",
       action: "Enviar E-mail",
-      available: "Resposta em até 24h"
+      available: "Resposta rápida"
     }
   ];
 

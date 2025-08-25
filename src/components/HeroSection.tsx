@@ -81,26 +81,41 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center gap-8 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">20+</div>
-                <div className="text-sm text-white/70">Anos de Experiência</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">3</div>
-                <div className="text-sm text-white/70">Anos no Mercado</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">100km</div>
-                <div className="text-sm text-white/70">Entrega Gratuita</div>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column - Visual Element (Optional for spacing) */}
-          <div className="lg:block hidden">
-            {/* This column provides visual balance - the image is in the background */}
+          {/* Right Column - Stats Card */}
+          <div className="lg:flex hidden justify-center items-center">
+            <div className="bg-background/95 backdrop-blur-sm border border-border rounded-2xl p-8 shadow-2xl max-w-sm animate-fade-in">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">Nossa Experiência</h3>
+                <p className="text-muted-foreground">Números que comprovam nossa excelência</p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="text-center p-4 bg-primary/5 rounded-xl border border-primary/10">
+                  <div className="text-4xl font-bold text-primary mb-1">20+</div>
+                  <div className="text-sm font-medium text-foreground">Anos de Experiência</div>
+                  <div className="text-xs text-muted-foreground mt-1">Soluções industriais comprovadas</div>
+                </div>
+                
+                <div className="text-center p-4 bg-secondary/5 rounded-xl border border-secondary/10">
+                  <div className="text-4xl font-bold text-secondary mb-1">3</div>
+                  <div className="text-sm font-medium text-foreground">Anos no Mercado</div>
+                  <div className="text-xs text-muted-foreground mt-1">Crescimento consistente</div>
+                </div>
+                
+                <div className="text-center p-4 bg-accent/5 rounded-xl border border-accent/10">
+                  <div className="text-4xl font-bold text-accent mb-1">100km</div>
+                  <div className="text-sm font-medium text-foreground">Entrega Gratuita</div>
+                  <div className="text-xs text-muted-foreground mt-1">Região metropolitana</div>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-6 border-t border-border text-center">
+                <div className="text-xs text-muted-foreground">Atendimento Nacional</div>
+                <div className="text-sm font-medium text-foreground">Soluções em todo Brasil</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

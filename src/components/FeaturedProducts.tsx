@@ -1,8 +1,15 @@
 import { ArrowRight, Package, Wrench, Shield, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedProducts = () => {
+  const navigate = useNavigate();
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+  };
+
   const productCategories = [
     {
       id: 1,
@@ -87,6 +94,18 @@ const FeaturedProducts = () => {
                   variant="outline" 
                   size="sm" 
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors mt-auto"
+                  onClick={() => {
+                    const categoryMap: { [key: string]: string } = {
+                      "Mangueiras e Mangotes": "mangueiras",
+                      "Correias Industriais": "correias", 
+                      "Lençóis de Borracha": "lencois",
+                      "Plásticos de Engenharia": "plasticos"
+                    };
+                    const categoryId = categoryMap[category.title];
+                    if (categoryId) {
+                      navigate(`/produtos?categoria=${categoryId}`);
+                    }
+                  }}
                 >
                   Ver Detalhes
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -106,11 +125,11 @@ const FeaturedProducts = () => {
             Entre em contato e encontraremos a solução ideal para sua aplicação.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="industrial" size="lg" className="flex items-center gap-2">
+            <Button variant="industrial" size="lg" className="flex items-center gap-2" onClick={() => navigate('/produtos')}>
               <Package className="h-5 w-5" />
               Ver Principais Produtos
             </Button>
-            <Button variant="hero" size="lg" className="flex items-center gap-2">
+            <Button variant="hero" size="lg" className="flex items-center gap-2" onClick={handleWhatsApp}>
               <ArrowRight className="h-5 w-5" />
               Solicitar Produto Personalizado
             </Button>

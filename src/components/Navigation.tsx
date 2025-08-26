@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -7,6 +7,15 @@ import { cn } from "@/lib/utils";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+  };
+
+  const handleOrcamento = () => {
+    navigate('/contato');
+  };
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -53,11 +62,11 @@ const Navigation = () => {
 
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="whatsapp" size="sm" className="flex items-center gap-2">
+            <Button variant="whatsapp" size="sm" className="flex items-center gap-2" onClick={handleWhatsApp}>
               <MessageCircle className="h-4 w-4" />
               WhatsApp
             </Button>
-            <Button variant="hero" size="sm" className="flex items-center gap-2">
+            <Button variant="hero" size="sm" className="flex items-center gap-2" onClick={handleOrcamento}>
               <Phone className="h-4 w-4" />
               Orçamento
             </Button>
@@ -96,11 +105,11 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-3">
-                <Button variant="whatsapp" size="sm" className="w-full justify-center">
+                <Button variant="whatsapp" size="sm" className="w-full justify-center" onClick={handleWhatsApp}>
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp
                 </Button>
-                <Button variant="hero" size="sm" className="w-full justify-center">
+                <Button variant="hero" size="sm" className="w-full justify-center" onClick={handleOrcamento}>
                   <Phone className="h-4 w-4 mr-2" />
                   Solicitar Orçamento
                 </Button>

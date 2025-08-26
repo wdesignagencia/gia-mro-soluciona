@@ -4,7 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SEOHead } from "@/components/SEOHead";
+import { useNavigate } from "react-router-dom";
 const Locations = () => {
+  const navigate = useNavigate();
+
+  const handleContact = () => {
+    navigate('/contato');
+  };
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de consultar frete para minha região.', '_blank');
+  };
   const locationsStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -182,7 +192,7 @@ const Locations = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                      <Button variant="industrial" className="flex-1" size="sm">
+                      <Button variant="industrial" className="flex-1" size="sm" onClick={handleContact}>
                         <Phone className="h-4 w-4 mr-2" />
                         Entrar em Contato
                       </Button>
@@ -245,7 +255,7 @@ const Locations = () => {
                 <p className="text-muted-foreground mb-4">
                   Não está em nossa área de entrega gratuita? Não se preocupe!
                 </p>
-                <Button variant="hero" size="lg">
+                <Button variant="hero" size="lg" onClick={handleWhatsApp}>
                   <Truck className="h-5 w-5 mr-2" />
                   Consultar Frete para Sua Região
                 </Button>

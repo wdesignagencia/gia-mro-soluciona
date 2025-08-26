@@ -1,8 +1,18 @@
 import { ArrowRight, CheckCircle, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-industrial.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+  };
+
+  const handleOrcamento = () => {
+    navigate('/contato');
+  };
   const differentials = [
     "Mais de 20 anos de experiência",
     "Soluções completas personalizadas",
@@ -65,6 +75,7 @@ const HeroSection = () => {
                 variant="hero" 
                 size="lg" 
                 className="text-sm lg:text-lg px-6 py-4 lg:px-8 lg:py-6 group"
+                onClick={handleOrcamento}
               >
                 <Phone className="h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                 Solicite um Orçamento Gratuito
@@ -75,6 +86,7 @@ const HeroSection = () => {
                 variant="whatsapp" 
                 size="lg" 
                 className="text-sm lg:text-lg px-6 py-4 lg:px-8 lg:py-6"
+                onClick={handleWhatsApp}
               >
                 <MessageCircle className="h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                 Fale via WhatsApp

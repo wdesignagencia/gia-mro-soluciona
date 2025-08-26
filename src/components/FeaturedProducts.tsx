@@ -44,11 +44,11 @@ const FeaturedProducts = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Nossos Produtos em Destaque
+            Principais Produtos
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Oferecemos uma linha completa de produtos industriais para atender todas as necessidades 
-            de manutenção, reparo e operação da sua empresa.
+            de manutenção, reparo e operação da sua empresa. Temos muito mais produtos disponíveis!
           </p>
         </div>
 
@@ -102,13 +102,13 @@ const FeaturedProducts = () => {
             Não encontrou o que procura?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Oferecemos desenvolvimento de produtos personalizados sem custo adicional. 
+            Temos muito mais produtos disponíveis! Oferecemos desenvolvimento de produtos personalizados sem custo adicional. 
             Entre em contato e encontraremos a solução ideal para sua aplicação.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="industrial" size="lg" className="flex items-center gap-2">
               <Package className="h-5 w-5" />
-              Ver Catálogo Completo
+              Ver Principais Produtos
             </Button>
             <Button variant="hero" size="lg" className="flex items-center gap-2">
               <ArrowRight className="h-5 w-5" />

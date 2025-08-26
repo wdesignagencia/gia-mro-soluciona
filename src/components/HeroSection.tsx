@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/97b2a341-3ed2-4729-9e9c-be4a92d52607.png"
+          src={heroImage}
           alt="Instalações industriais modernas da GIA MRO"
           className="w-full h-full object-cover"
         />
@@ -83,37 +83,22 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Right Column - Stats Card */}
+          {/* Right Column - Small Stats Cards */}
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <div className="bg-background/95 backdrop-blur-sm border border-border rounded-2xl p-6 lg:p-8 shadow-2xl w-full max-w-sm animate-fade-in">
-              <div className="text-center mb-4 lg:mb-6">
-                <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-2">Nossa Experiência</h3>
-                <p className="text-sm lg:text-base text-muted-foreground">Números que comprovam nossa excelência</p>
+            <div className="grid grid-cols-1 gap-4 w-full max-w-xs animate-fade-in">
+              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
+                <div className="text-2xl font-bold text-primary mb-1">20+</div>
+                <div className="text-xs font-medium text-foreground">Anos de Experiência</div>
               </div>
               
-              <div className="space-y-4 lg:space-y-6">
-                <div className="text-center p-3 lg:p-4 bg-primary/5 rounded-xl border border-primary/10">
-                  <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">20+</div>
-                  <div className="text-xs lg:text-sm font-medium text-foreground">Anos de Experiência</div>
-                  <div className="text-xs text-muted-foreground mt-1">Soluções industriais comprovadas</div>
-                </div>
-                
-                <div className="text-center p-3 lg:p-4 bg-secondary/5 rounded-xl border border-secondary/10">
-                  <div className="text-3xl lg:text-4xl font-bold text-secondary mb-1">3</div>
-                  <div className="text-xs lg:text-sm font-medium text-foreground">Anos no Mercado</div>
-                  <div className="text-xs text-muted-foreground mt-1">Crescimento consistente</div>
-                </div>
-                
-                <div className="text-center p-3 lg:p-4 bg-accent/5 rounded-xl border border-accent/10">
-                  <div className="text-3xl lg:text-4xl font-bold text-accent mb-1">100km</div>
-                  <div className="text-xs lg:text-sm font-medium text-foreground">Entrega Gratuita</div>
-                  <div className="text-xs text-muted-foreground mt-1">Região metropolitana</div>
-                </div>
+              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
+                <div className="text-2xl font-bold text-secondary mb-1">3</div>
+                <div className="text-xs font-medium text-foreground">Anos no Mercado</div>
               </div>
               
-              <div className="mt-4 lg:mt-6 pt-4 lg:pt-6 border-t border-border text-center">
-                <div className="text-xs text-muted-foreground">Atendimento Nacional</div>
-                <div className="text-xs lg:text-sm font-medium text-foreground">Soluções em todo Brasil</div>
+              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
+                <div className="text-2xl font-bold text-accent mb-1">100km</div>
+                <div className="text-xs font-medium text-foreground">Entrega Gratuita</div>
               </div>
             </div>
           </div>

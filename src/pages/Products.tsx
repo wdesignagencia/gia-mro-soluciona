@@ -181,10 +181,10 @@ const Products = () => {
   ];
 
   const categories = [
-    { id: "all", name: "Todos os Produtos" },
+    { id: "all", name: "Principais Produtos" },
     { id: "mangueiras", name: "Mangueiras" },
     { id: "correias", name: "Correias" },
-    { id: "lencois", name: "Lençóis" },
+    { id: "lencois", name: "Lençóis de Borracha" },
     { id: "plasticos", name: "Plásticos de Engenharia" },
     { id: "vedacoes", name: "Vedações" },
     { id: "complementares", name: "Complementares" }
@@ -231,11 +231,11 @@ const Products = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Nossos <span className="text-primary">Produtos</span>
+                Principais <span className="text-primary">Produtos</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-                Catálogo completo de produtos industriais para atender todas as necessidades 
-                de manutenção, reparo e operação da sua empresa
+                Nosso catálogo completo de produtos industriais para atender todas as necessidades 
+                de manutenção, reparo e operação da sua empresa. Temos muito mais produtos disponíveis - entre em contato!
               </p>
 
               {/* Filter Categories */}

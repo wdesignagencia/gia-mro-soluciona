@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-industrial-new.jpg";
+import heroImage from "@/assets/hero-industrial.jpg";
 
 const HeroSection = () => {
   const differentials = [

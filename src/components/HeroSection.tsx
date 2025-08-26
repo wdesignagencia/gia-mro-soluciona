@@ -85,20 +85,35 @@ const HeroSection = () => {
 
           {/* Right Column - Small Stats Cards */}
           <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <div className="grid grid-cols-1 gap-4 w-full max-w-xs animate-fade-in">
-              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
-                <div className="text-2xl font-bold text-primary mb-1">20+</div>
-                <div className="text-xs font-medium text-foreground">Anos de Experiência</div>
+            <div className="grid grid-cols-1 gap-4 w-full max-w-xs">
+              <div 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                           animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
+                           transition-all duration-300 cursor-pointer group"
+                style={{ animationDelay: '0.2s' }}
+              >
+                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-200">20+</div>
+                <div className="text-xs font-medium text-foreground/90">Anos de Experiência</div>
               </div>
               
-              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
-                <div className="text-2xl font-bold text-secondary mb-1">3</div>
-                <div className="text-xs font-medium text-foreground">Anos no Mercado</div>
+              <div 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                           animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
+                           transition-all duration-300 cursor-pointer group"
+                style={{ animationDelay: '0.4s' }}
+              >
+                <div className="text-2xl font-bold text-secondary mb-1 group-hover:scale-110 transition-transform duration-200">3</div>
+                <div className="text-xs font-medium text-foreground/90">Anos no Mercado</div>
               </div>
               
-              <div className="bg-background/95 backdrop-blur-sm border border-border rounded-xl p-4 shadow-xl text-center">
-                <div className="text-2xl font-bold text-accent mb-1">100km</div>
-                <div className="text-xs font-medium text-foreground">Entrega Gratuita</div>
+              <div 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                           animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
+                           transition-all duration-300 cursor-pointer group"
+                style={{ animationDelay: '0.6s' }}
+              >
+                <div className="text-2xl font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-200">100km</div>
+                <div className="text-xs font-medium text-foreground/90">Entrega Gratuita</div>
               </div>
             </div>
           </div>

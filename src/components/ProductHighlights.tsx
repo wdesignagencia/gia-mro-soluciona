@@ -54,7 +54,7 @@ const ProductHighlights = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
+              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 flex flex-col h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="text-center pb-4">
@@ -68,8 +68,8 @@ const ProductHighlights = () => {
                   {product.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-2 mb-4">
+              <CardContent className="flex flex-col flex-grow">
+                <div className="space-y-2 mb-4 flex-grow">
                   {product.keywords.map((keyword, idx) => (
                     <div key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full inline-block mr-1">
                       {keyword}
@@ -79,7 +79,7 @@ const ProductHighlights = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="w-full hover:bg-primary hover:text-primary-foreground"
+                  className="w-full hover:bg-primary hover:text-primary-foreground mt-auto"
                   onClick={() => navigate('/produtos')}
                 >
                   Ver Catálogo

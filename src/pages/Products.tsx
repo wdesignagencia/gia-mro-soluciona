@@ -13,7 +13,7 @@ const Products = () => {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
   };
 
   const handleOrcamento = () => {

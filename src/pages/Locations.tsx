@@ -13,7 +13,7 @@ const Locations = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de consultar frete para minha região.', '_blank');
+    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de consultar frete para minha região.', '_blank');
   };
   const locationsStructuredData = {
     "@context": "https://schema.org",

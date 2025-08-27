@@ -5,39 +5,39 @@ const KeyDifferentials = () => {
   const differentials = [
     {
       icon: Star,
-      title: "Vasta Experiência",
-      description: "Mais de 20 anos de experiência no segmento de manutenção industrial, garantindo conhecimento profundo do mercado.",
-      highlight: "20+ anos"
+      title: "20+ Anos Experiência",
+      description: "Mais de 20 anos no segmento de manutenção industrial, fornecendo mangueiras, correias e mangotes de qualidade certificada.",
+      highlight: "Desde 2004"
     },
     {
       icon: Headphones,
-      title: "Suporte Completo",
-      description: "Suporte técnico especializado pré e pós-venda, assegurando que você tenha todo o apoio necessário.",
-      highlight: "24/7"
+      title: "Suporte Técnico Especializado",
+      description: "Suporte técnico pré e pós-venda especializado em aplicações industriais. Nossa equipe entende sua necessidade específica.",
+      highlight: "Pré e Pós"
     },
     {
       icon: DollarSign,
-      title: "Preços Competitivos",
-      description: "Oferecemos os melhores preços do mercado sem comprometer a qualidade dos nossos produtos e serviços.",
-      highlight: "Melhor custo"
+      title: "Desenvolvimento Sem Custo",
+      description: "Desenvolvemos produtos personalizados para sua aplicação específica sem custo adicional. Soluções, não apenas produtos.",
+      highlight: "Sem custo"
     },
     {
       icon: Package,
-      title: "Qualidade Certificada",
-      description: "Todos os nossos produtos passam por rigorosos controles de qualidade e atendem às normas técnicas mais exigentes.",
-      highlight: "ISO Certified"
+      title: "Pronta Entrega 100km",
+      description: "Estoque completo em São Paulo e Jundiaí com entrega gratuita em até 100km. Mangueiras, correias e mangotes sempre disponíveis.",
+      highlight: "Entrega grátis"
     },
     {
       icon: MapPin,
       title: "Atendimento Nacional",
-      description: "Cobertura nacional com entregas gratuitas em um raio de até 100km das nossas unidades em SP.",
-      highlight: "100km grátis"
+      description: "Cobertura nacional para fornecimento de mangueiras borracha/PVC, correias em V e mangotes flangeados para todos os setores.",
+      highlight: "Todo Brasil"
     },
     {
       icon: Wrench,
-      title: "Desenvolvimento Sem Custo",
-      description: "Desenvolvemos produtos personalizados para sua aplicação específica sem custo adicional.",
-      highlight: "Grátis"
+      title: "Qualidade Certificada",
+      description: "Fornecedor MRO certificado com produtos que atendem normas técnicas brasileiras (ABNT) e internacionais (ISO).",
+      highlight: "ISO/ABNT"
     }
   ];
 
@@ -58,14 +58,14 @@ const KeyDifferentials = () => {
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-2 text-sm font-medium mb-6">
             <Star className="h-4 w-4" />
-            Por que escolher a GIA MRO
+            Por que escolher a GIA há 20+ anos
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Nossos Diferenciais
+            Nossos Diferenciais Competitivos
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos muito mais que produtos - entregamos tranquilidade e soluções 
-            completas para garantir o sucesso da sua operação industrial.
+            Somos <strong>fornecedor MRO especializado</strong> em mangueiras borracha/PVC, 
+            correias em V e mangotes flangeados. Oferecemos tranquilidade e aplicação correta.
           </p>
         </div>
 

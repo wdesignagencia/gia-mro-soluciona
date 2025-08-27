@@ -16,15 +16,19 @@ const Contact = () => {
     "@type": "ContactPage",
     "mainEntity": {
       "@type": "Organization",
-      "name": "GIA MRO",
+      "name": "GIA",
+      "alternateName": "GIA Produtos Industriais",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+55-11-94754-3023",
         "email": "contato@giamro.com.br",
         "contactType": "customer service",
         "availableLanguage": "Portuguese",
-        "hoursAvailable": "Mo-Fr 08:00-18:00"
-      }
+        "hoursAvailable": "Mo-Fr 08:00-18:00",
+        "description": "Fornecedor MRO especializado em mangueiras, correias e mangotes industriais"
+      },
+      "knowsAbout": ["Mangueira Borracha", "Correia em V", "Mangote Flangeado", "Fornecedor MRO"],
+      "yearsOfExperience": "20+"
     }
   };
 
@@ -173,9 +177,9 @@ Enviado através do site www.giamro.com.br`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Contato | Solicite Orçamento Gratuito | GIA MRO Suprimentos Industriais"
-        description="Entre em contato com a GIA MRO: telefone (11) 94754-3023, WhatsApp 24h, e-mail contato@giamro.com.br. Orçamento gratuito e atendimento especializado."
-        keywords="contato GIA MRO, orçamento gratuito, telefone industrial, WhatsApp suprimentos, São Paulo Jundiaí"
+        title="Contato | Orçamento Mangueiras, Correias, Mangotes | GIA | São Paulo"
+        description="Solicite orçamento mangueiras borracha/PVC, correias em V, mangotes flangeados. WhatsApp (11) 94754-3023. Atendimento 08h-18h. Desenvolvimento sem custo."
+        keywords="orçamento mangueira borracha, correia em V preço, mangote flangeado cotação, fornecedor MRO São Paulo, contato industrial"
         url="https://giamro.com.br/contato"
         structuredData={contactStructuredData}
       />
@@ -190,8 +194,9 @@ Enviado através do site www.giamro.com.br`;
                 Entre em <span className="text-primary">Contato</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Solicite seu orçamento gratuito ou tire suas dúvidas. Nossa equipe 
-                especializada está pronta para encontrar a solução ideal para você.
+                Solicite orçamento <strong>mangueiras borracha/PVC, correias em V, mangotes flangeados</strong>. 
+                <strong>20+ anos experiência</strong> em <strong>equipamentos manutenção industrial</strong>. 
+                <strong>Desenvolvimento sem custo</strong>.
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre mangueiras, correias e mangotes industriais.', '_blank');
   };
 
   const handleOrcamento = () => {
@@ -37,8 +37,8 @@ const Navigation = () => {
               <span className="text-white font-bold text-lg">G</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground">GIA MRO</span>
-              <span className="text-xs text-muted-foreground">Soluções Industriais</span>
+              <span className="font-bold text-lg text-foreground">GIA</span>
+              <span className="text-xs text-muted-foreground">Produtos Industriais</span>
             </div>
           </Link>
 

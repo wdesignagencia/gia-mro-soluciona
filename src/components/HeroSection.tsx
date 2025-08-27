@@ -14,10 +14,10 @@ const HeroSection = () => {
     navigate('/contato');
   };
   const differentials = [
-    "Mais de 20 anos de experiência",
-    "Soluções completas personalizadas",
-    "Desenvolvimento sem custo",
-    "Atendimento nacional"
+    "20+ anos manutenção industrial",
+    "Suporte técnico pré e pós venda",
+    "Desenvolvimento produtos sem custo",
+    "Pronta entrega 100km gratuita"
   ];
 
   return (
@@ -46,16 +46,17 @@ const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                GIA MRO
-                <span className="block text-accent">Soluções Completas</span>
+                GIA
+                <span className="block text-accent">Mangueiras, Correias</span>
                 <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-white/90">
-                  em Manutenção Industrial
+                  e Mangotes Industriais
                 </span>
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-                Mais de 20 anos de experiência fornecendo não apenas produtos, 
-                mas soluções completas para sua operação industrial.
+                <strong>20+ anos de experiência</strong> em manutenção industrial. 
+                Fornecemos mangueiras borracha/PVC, correias em V, mangotes flangeados 
+                e lençóis de borracha com <strong>desenvolvimento sem custo</strong>.
               </p>
             </div>
 

@@ -11,9 +11,9 @@ interface SEOHeadProps {
 }
 
 export const SEOHead = ({
-  title = "GIA MRO - Suprimentos Industriais e Soluções MRO",
-  description = "Especialistas em suprimentos industriais, peças de reposição e soluções MRO. Atendimento em São Paulo e Jundiaí com estoque completo e entregas rápidas.",
-  keywords = "suprimentos industriais, MRO, peças de reposição, manutenção industrial, equipamentos industriais, São Paulo, Jundiaí, fornecedor industrial, estoque industrial",
+  title = "GIA - Mangueiras, Correias e Mangotes Industriais | 20 Anos Experiência | SP",
+  description = "GIA: 20+ anos fornecendo mangueiras borracha/PVC, correias em V, mangotes flangeados e lençóis de borracha. Pronta entrega 100km. São Paulo e Jundiaí.",
+  keywords = "mangueira borracha, mangueira PVC, correia em V, correia sincronizadora, mangote borracha, lençol de borracha, manta borracha, tarugo de nylon, fornecedor industrial São Paulo",
   image = "/hero-industrial.jpg",
   url = "https://giamro.com.br",
   type = "website",
@@ -54,11 +54,15 @@ export const SEOHead = ({
       }
     ],
     "serviceType": [
-      "Suprimentos Industriais",
-      "Peças de Reposição",
-      "Soluções MRO",
-      "Manutenção Industrial"
-    ]
+      "Mangueiras Industriais",
+      "Correias Industriais", 
+      "Mangotes Flangeados",
+      "Lençóis de Borracha",
+      "Plásticos de Engenharia"
+    ],
+    "foundingDate": "2004",
+    "areaServedDescription": "Atendimento nacional com entrega gratuita 100km",
+    "yearOfExperience": "20+"
   };
 
   return (

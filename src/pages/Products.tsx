@@ -236,9 +236,9 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Produtos Industriais | Mangueiras, Correias, Lençóis de Borracha | GIA MRO"
-        description="Catálogo completo de produtos industriais: mangueiras, correias, lençóis de borracha, plásticos de engenharia. Estoque em São Paulo e Jundiaí. Entrega rápida."
-        keywords="mangueiras industriais, correias industriais, lençóis de borracha, plásticos de engenharia, produtos industriais MRO, São Paulo, Jundiaí"
+        title="Catálogo Produtos | Mangueira Borracha, Correia em V, Mangotes | GIA"
+        description="Mangueiras borracha/PVC, correias em V, mangotes flangeados, lençóis borracha. 20+ anos experiência. Pronta entrega São Paulo/Jundiaí. Desenvolvimento sem custo."
+        keywords="mangueira borracha, mangueira PVC, correia em V, correia sincronizadora, mangote flangeado, lençol de borracha, tarugo de nylon, fornecedor MRO"
         url="https://giamro.com.br/produtos"
         structuredData={productStructuredData}
       />

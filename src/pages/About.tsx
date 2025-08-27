@@ -9,13 +9,16 @@ const About = () => {
     "@type": "AboutPage",
     "mainEntity": {
       "@type": "Organization",
-      "name": "GIA MRO",
+      "name": "GIA",
+      "alternateName": "GIA Produtos Industriais",
       "foundingDate": "2021",
-      "description": "Empresa especializada em suprimentos industriais com mais de 20 anos de experiência no mercado",
+      "description": "Empresa especializada em mangueiras, correias e mangotes industriais com mais de 20 anos de experiência no mercado MRO",
       "founder": {
         "@type": "Person",
-        "name": "Fundadores GIA MRO"
-      }
+        "name": "Fundadores GIA"
+      },
+      "knowsAbout": ["Manutenção Industrial", "Equipamentos Manutenção Industrial", "Fornecedor MRO"],
+      "yearsOfExperience": "20+"
     }
   };
 
@@ -58,9 +61,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Sobre a GIA MRO | 20+ Anos de Experiência em Suprimentos Industriais"
-        description="Conheça a história da GIA MRO: mais de 20 anos de experiência em suprimentos industriais. Fundada em 2021, expandiu para Jundiaí em 2023."
-        keywords="sobre GIA MRO, história empresa, experiência industrial, suprimentos industriais, fundação 2021, expansão Jundiaí"
+        title="Sobre a GIA | 20+ Anos Fornecendo Mangueiras e Correias Industriais | SP"
+        description="GIA: 20+ anos experiência manutenção industrial. Fundada em 2021, expandiu para Jundiaí. Fornecedor especializado mangueiras, correias e mangotes."
+        keywords="sobre GIA, 20 anos experiência manutenção industrial, história empresa, fornecedor MRO, mangueiras industriais história"
         url="https://giamro.com.br/sobre"
         structuredData={aboutStructuredData}
       />
@@ -72,11 +75,11 @@ const About = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Sobre a <span className="text-primary">GIA MRO</span>
+                Sobre a <span className="text-primary">GIA</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Mais de 20 anos de experiência transformados em soluções completas 
-                para manutenção industrial
+                20+ anos de experiência em <strong>manutenção industrial</strong> 
+                transformados em soluções completas de <strong>fornecedor MRO</strong>
               </p>
             </div>
           </div>
@@ -93,19 +96,20 @@ const About = () => {
                 <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                   <p>
                     Com mais de <strong className="text-foreground">20 anos de experiência</strong> no 
-                    segmento de manutenção industrial, a GIA MRO nasceu do sonho de ter uma empresa 
-                    própria focada em fornecer não apenas produtos, mas <strong className="text-primary">soluções completas</strong> para 
+                    segmento de <strong className="text-primary">manutenção industrial</strong>, a GIA nasceu do sonho de ter uma empresa 
+                    própria focada em fornecer não apenas produtos, mas <strong className="text-primary">soluções completas MRO</strong> para 
                     nossos clientes.
                   </p>
                   <p>
-                    Fundada há <strong className="text-foreground">3 anos</strong>, nossa missão é oferecer 
-                    tranquilidade aos clientes, garantindo que recebam exatamente aquilo que realmente 
-                    servirá para sua aplicação específica.
+                    Somos <strong className="text-foreground">fornecedor especializado</strong> em 
+                    <strong className="text-primary">mangueiras borracha/PVC, correias em V, mangotes flangeados</strong> e 
+                    lençóis de borracha. Nossa missão é oferecer tranquilidade aos clientes, garantindo que recebam 
+                    exatamente aquilo que realmente servirá para sua aplicação específica.
                   </p>
                   <p>
-                    Nossa vasta experiência nos permite não apenas fornecer produtos de qualidade, 
+                    Nossa <strong className="text-foreground">vasta experiência em equipamentos manutenção industrial</strong> nos permite não apenas fornecer produtos de qualidade, 
                     mas também desenvolver soluções personalizadas que atendem às necessidades 
-                    específicas de cada cliente.
+                    específicas de cada cliente com <strong className="text-primary">desenvolvimento sem custo</strong>.
                   </p>
                 </div>
               </div>

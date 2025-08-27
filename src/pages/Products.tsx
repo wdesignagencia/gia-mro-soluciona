@@ -263,10 +263,10 @@ const Products = () => {
                   {categories.map((category) => (
                     <Button
                       key={category.id}
-                      variant={selectedCategory === category.id ? "industrial" : "outline"}
+                      variant={selectedCategory === category.id ? "hero" : "outline"}
                       size="sm"
                       onClick={() => setSelectedCategory(category.id)}
-                      className="whitespace-nowrap"
+                      className="whitespace-nowrap hover:bg-primary hover:text-primary-foreground"
                     >
                       {category.name}
                     </Button>

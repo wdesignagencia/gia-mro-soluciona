@@ -51,7 +51,7 @@ const Navigation = () => {
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
                   isActive(item.href)
-                    ? "text-primary border-b-2 border-primary pb-1"
+                    ? "text-primary border-b-2 border-accent pb-1"
                     : "text-muted-foreground"
                 )}
               >

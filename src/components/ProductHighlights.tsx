@@ -15,33 +15,25 @@ const ProductHighlights = () => {
       icon: Wrench,
       title: "Mangueiras Borracha e PVC",
       description: "Mangueiras para sucção, óleo, água e ar comprimido",
-      keywords: ["mangueira borracha", "mangueira PVC", "mangueira sucção", "mangueira para óleo"],
-      color: "from-blue-500/20 to-blue-600/20",
-      borderColor: "border-blue-500/30"
+      keywords: ["mangueira borracha", "mangueira PVC", "mangueira sucção", "mangueira para óleo"]
     },
     {
       icon: Cog,
       title: "Correias Industriais",
       description: "Correias em V, sincronizadoras e transportadoras",
-      keywords: ["correia em V", "correia sincronizadora", "correias industriais"],
-      color: "from-green-500/20 to-green-600/20", 
-      borderColor: "border-green-500/30"
+      keywords: ["correia em V", "correia sincronizadora", "correias industriais"]
     },
     {
       icon: Shield,
       title: "Mangotes e Lençóis",
       description: "Mangotes flangeados para draga e lençóis de borracha",
-      keywords: ["mangote flangeado", "mangote borracha", "lençol de borracha", "manta borracha"],
-      color: "from-purple-500/20 to-purple-600/20",
-      borderColor: "border-purple-500/30"
+      keywords: ["mangote flangeado", "mangote borracha", "lençol de borracha", "manta borracha"]
     },
     {
       icon: Truck,
       title: "Plásticos de Engenharia",
       description: "Tarugos de nylon, chapas acrílicas e polipropileno",
-      keywords: ["tarugo de nylon", "chapa acrílica", "polipropileno", "chapa de nylon"],
-      color: "from-orange-500/20 to-orange-600/20",
-      borderColor: "border-orange-500/30"
+      keywords: ["tarugo de nylon", "chapa acrílica", "polipropileno", "chapa de nylon"]
     }
   ];
 
@@ -62,7 +54,7 @@ const ProductHighlights = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${product.borderColor} bg-gradient-to-br ${product.color}`}
+              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="text-center pb-4">

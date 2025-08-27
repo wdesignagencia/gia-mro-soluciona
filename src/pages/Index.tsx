@@ -10,7 +10,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "GIA MRO",
-    "description": "Especialistas em suprimentos industriais e soluções MRO. Fornecedor de mangueiras, correias, lençóis de borracha e plásticos de engenharia.",
+    "description": "Especialistas em produtos industriais e produtos MRO. Fornecedor de mangueiras, correias, lençóis de borracha e plásticos de engenharia.",
     "url": "https://giamro.com.br",
     "logo": "https://giamro.com.br/logo.png",
     "telephone": "+55-11-94754-3023",
@@ -25,7 +25,7 @@ const Index = () => {
       }
     ],
     "areaServed": "São Paulo",
-    "serviceType": ["Suprimentos Industriais", "Soluções MRO", "Peças de Reposição"],
+    "serviceType": ["Produtos Industriais", "Produtos MRO", "Peças de Reposição"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Catálogo de Produtos Industriais",
@@ -58,9 +58,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="GIA MRO - Suprimentos Industriais e Soluções MRO | São Paulo"
-        description="Especialistas em suprimentos industriais, mangueiras, correias, lençóis de borracha e plásticos de engenharia. Atendimento em São Paulo e Jundiaí."
-        keywords="suprimentos industriais, MRO, mangueiras industriais, correias industriais, lençóis de borracha, plásticos de engenharia, fornecedor industrial São Paulo"
+        title="GIA MRO - Produtos Industriais e Produtos MRO | São Paulo"
+        description="Especialistas em produtos industriais, mangueiras, correias, lençóis de borracha e plásticos de engenharia. Atendimento em São Paulo e Jundiaí."
+        keywords="produtos industriais, MRO, mangueiras industriais, correias industriais, lençóis de borracha, plásticos de engenharia, fornecedor industrial São Paulo"
         url="https://giamro.com.br"
         structuredData={homeStructuredData}
       />

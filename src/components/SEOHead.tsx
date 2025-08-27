@@ -11,9 +11,9 @@ interface SEOHeadProps {
 }
 
 export const SEOHead = ({
-  title = "GIA MRO - Suprimentos Industriais e Soluções MRO",
-  description = "Especialistas em suprimentos industriais, peças de reposição e soluções MRO. Atendimento em São Paulo e Jundiaí com estoque completo e entregas rápidas.",
-  keywords = "suprimentos industriais, MRO, peças de reposição, manutenção industrial, equipamentos industriais, São Paulo, Jundiaí, fornecedor industrial, estoque industrial",
+  title = "GIA MRO - Produtos Industriais e Produtos MRO",
+  description = "Especialistas em produtos industriais, peças de reposição e produtos MRO. Atendimento em São Paulo e Jundiaí com estoque completo e entregas rápidas.",
+  keywords = "produtos industriais, MRO, peças de reposição, manutenção industrial, equipamentos industriais, São Paulo, Jundiaí, fornecedor industrial, estoque industrial",
   image = "/hero-industrial.jpg",
   url = "https://giamro.com.br",
   type = "website",
@@ -54,9 +54,9 @@ export const SEOHead = ({
       }
     ],
     "serviceType": [
-      "Suprimentos Industriais",
+      "Produtos Industriais",
       "Peças de Reposição",
-      "Soluções MRO",
+      "Produtos MRO",
       "Manutenção Industrial"
     ]
   };

@@ -173,9 +173,9 @@ Enviado através do site www.giamro.com.br`;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Contato | Solicite Orçamento Gratuito | GIA MRO Suprimentos Industriais"
+        title="Contato | Solicite Orçamento Gratuito | GIA MRO Produtos Industriais"
         description="Entre em contato com a GIA MRO: telefone (11) 94754-3023, WhatsApp 24h, e-mail contato@giamro.com.br. Orçamento gratuito e atendimento especializado."
-        keywords="contato GIA MRO, orçamento gratuito, telefone industrial, WhatsApp suprimentos, São Paulo Jundiaí"
+        keywords="contato GIA MRO, orçamento gratuito, telefone industrial, WhatsApp produtos, São Paulo Jundiaí"
         url="https://giamro.com.br/contato"
         structuredData={contactStructuredData}
       />

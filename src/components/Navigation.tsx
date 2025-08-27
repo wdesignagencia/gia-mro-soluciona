@@ -38,7 +38,7 @@ const Navigation = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg text-foreground">GIA MRO</span>
-              <span className="text-xs text-muted-foreground">Soluções Industriais</span>
+              <span className="text-xs text-muted-foreground">Produtos Industriais</span>
             </div>
           </Link>
 

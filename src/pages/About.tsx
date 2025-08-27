@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import { Users, Target, Clock, Award, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEOHead } from "@/components/SEOHead";
-
 const About = () => {
   const aboutStructuredData = {
     "@context": "https://schema.org",
@@ -21,52 +20,34 @@ const About = () => {
       "yearsOfExperience": "20+"
     }
   };
-
-  const milestones = [
-    {
-      year: "2001",
-      title: "Início da Jornada",
-      description: "Início da experiência no segmento de manutenção industrial"
-    },
-    {
-      year: "2021",
-      title: "Fundação da GIA MRO",
-      description: "Nascimento da empresa com foco em soluções completas"
-    },
-    {
-      year: "2023",
-      title: "Expansão Regional",
-      description: "Criação do ponto de apoio em Jundiaí para melhor atendimento"
-    }
-  ];
-
-  const values = [
-    {
-      icon: Target,
-      title: "Missão",
-      description: "Oferecer tranquilidade aos clientes, garantindo que recebam exatamente aquilo que realmente servirá para sua aplicação."
-    },
-    {
-      icon: Users,
-      title: "Visão",
-      description: "Ser a empresa de referência em soluções completas de manutenção industrial no Brasil."
-    },
-    {
-      icon: Award,
-      title: "Valores",
-      description: "Experiência, qualidade, confiabilidade e compromisso com soluções personalizadas."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
-      <SEOHead 
-        title="Sobre a GIA | 20+ Anos Fornecendo Mangueiras e Correias Industriais | SP"
-        description="GIA: 20+ anos experiência manutenção industrial. Fundada em 2021, expandiu para Jundiaí. Fornecedor especializado mangueiras, correias e mangotes."
-        keywords="sobre GIA, 20 anos experiência manutenção industrial, história empresa, fornecedor MRO, mangueiras industriais história"
-        url="https://giamro.com.br/sobre"
-        structuredData={aboutStructuredData}
-      />
+  const milestones = [{
+    year: "2001",
+    title: "Início da Jornada",
+    description: "Início da experiência no segmento de manutenção industrial"
+  }, {
+    year: "2021",
+    title: "Fundação da GIA MRO",
+    description: "Nascimento da empresa com foco em soluções completas"
+  }, {
+    year: "2023",
+    title: "Expansão Regional",
+    description: "Criação do ponto de apoio em Jundiaí para melhor atendimento"
+  }];
+  const values = [{
+    icon: Target,
+    title: "Missão",
+    description: "Oferecer tranquilidade aos clientes, garantindo que recebam exatamente aquilo que realmente servirá para sua aplicação."
+  }, {
+    icon: Users,
+    title: "Visão",
+    description: "Ser a empresa de referência em soluções completas de manutenção industrial no Brasil."
+  }, {
+    icon: Award,
+    title: "Valores",
+    description: "Experiência, qualidade, confiabilidade e compromisso com soluções personalizadas."
+  }];
+  return <div className="min-h-screen bg-background">
+      <SEOHead title="Sobre a GIA | 20+ Anos Fornecendo Mangueiras e Correias Industriais | SP" description="GIA: 20+ anos experiência manutenção industrial. Fundada em 2021, expandiu para Jundiaí. Fornecedor especializado mangueiras, correias e mangotes." keywords="sobre GIA, 20 anos experiência manutenção industrial, história empresa, fornecedor MRO, mangueiras industriais história" url="https://giamro.com.br/sobre" structuredData={aboutStructuredData} />
       <Navigation />
       
       <main className="pt-8">
@@ -78,7 +59,7 @@ const About = () => {
                 Sobre a <span className="text-primary">GIA</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                20+ anos de experiência em <strong>manutenção industrial</strong> 
+                20+ anos de experiência em <strong>manutenção industrial </strong> 
                 transformados em soluções completas de <strong>fornecedor MRO</strong>
               </p>
             </div>
@@ -156,14 +137,9 @@ const About = () => {
               {/* Timeline Line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-px"></div>
 
-              {milestones.map((milestone, index) => (
-                <div 
-                  key={index} 
-                  className={`relative flex items-center mb-12 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+              {milestones.map((milestone, index) => <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`} style={{
+              animationDelay: `${index * 0.2}s`
+            }}>
                   {/* Timeline Dot */}
                   <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform md:-translate-x-2 z-10"></div>
 
@@ -183,8 +159,7 @@ const About = () => {
                       </CardContent>
                     </Card>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -202,12 +177,9 @@ const About = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
-                <Card 
-                  key={index}
-                  className="group text-center hover:shadow-industrial transition-all duration-300 hover:-translate-y-2 border-border/50"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {values.map((value, index) => <Card key={index} className="group text-center hover:shadow-industrial transition-all duration-300 hover:-translate-y-2 border-border/50" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardHeader>
                     <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                       <value.icon className="h-8 w-8 text-white" />
@@ -219,8 +191,7 @@ const About = () => {
                       {value.description}
                     </CardDescription>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -233,15 +204,21 @@ const About = () => {
                 <div className="text-4xl font-bold text-accent mb-2">20+</div>
                 <div className="text-white/90">Anos de Experiência</div>
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="animate-fade-in" style={{
+              animationDelay: "0.1s"
+            }}>
                 <div className="text-4xl font-bold text-accent mb-2">3</div>
                 <div className="text-white/90">Anos da GIA MRO</div>
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="animate-fade-in" style={{
+              animationDelay: "0.2s"
+            }}>
                 <div className="text-4xl font-bold text-accent mb-2">2</div>
                 <div className="text-white/90">Unidades SP</div>
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="animate-fade-in" style={{
+              animationDelay: "0.3s"
+            }}>
                 <div className="text-4xl font-bold text-accent mb-2">100km</div>
                 <div className="text-white/90">Entrega Gratuita</div>
               </div>
@@ -249,8 +226,6 @@ const About = () => {
           </div>
         </section>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default About;

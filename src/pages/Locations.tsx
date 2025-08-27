@@ -92,8 +92,8 @@ const Locations = () => {
   return <div className="min-h-screen bg-background">
       <SEOHead 
         title="Localidades | São Paulo e Jundiaí | Entrega Gratuita 100km | GIA MRO"
-        description="GIA MRO com unidades em São Paulo (Cambuci) e Jundiaí. Entrega gratuita até 100km, cobertura nacional. Atendimento especializado em produtos industriais."
-        keywords="localidades GIA MRO, São Paulo Cambuci, Jundiaí filial, entrega gratuita 100km, cobertura nacional produtos"
+        description="GIA MRO com unidades em São Paulo (Cambuci) e Jundiaí. Entrega gratuita até 100km, cobertura nacional. Atendimento especializado em suprimentos industriais."
+        keywords="localidades GIA MRO, São Paulo Cambuci, Jundiaí filial, entrega gratuita 100km, cobertura nacional suprimentos"
         url="https://giamro.com.br/localidades"
         structuredData={locationsStructuredData}
       />

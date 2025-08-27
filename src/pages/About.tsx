@@ -11,7 +11,7 @@ const About = () => {
       "@type": "Organization",
       "name": "GIA MRO",
       "foundingDate": "2021",
-      "description": "Empresa especializada em produtos industriais com mais de 20 anos de experiência no mercado",
+      "description": "Empresa especializada em suprimentos industriais com mais de 20 anos de experiência no mercado",
       "founder": {
         "@type": "Person",
         "name": "Fundadores GIA MRO"
@@ -58,9 +58,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Sobre a GIA MRO | 20+ Anos de Experiência em Produtos Industriais"
-        description="Conheça a história da GIA MRO: mais de 20 anos de experiência em produtos industriais. Fundada em 2021, expandiu para Jundiaí em 2023."
-        keywords="sobre GIA MRO, história empresa, experiência industrial, produtos industriais, fundação 2021, expansão Jundiaí"
+        title="Sobre a GIA MRO | 20+ Anos de Experiência em Suprimentos Industriais"
+        description="Conheça a história da GIA MRO: mais de 20 anos de experiência em suprimentos industriais. Fundada em 2021, expandiu para Jundiaí em 2023."
+        keywords="sobre GIA MRO, história empresa, experiência industrial, suprimentos industriais, fundação 2021, expansão Jundiaí"
         url="https://giamro.com.br/sobre"
         structuredData={aboutStructuredData}
       />

@@ -22,6 +22,7 @@ const buttonVariants = cva(
         hero: "bg-gradient-accent text-accent-foreground hover:bg-accent-hover shadow-accent-glow font-semibold",
         industrial: "bg-primary text-primary-foreground hover:bg-primary-glow border border-primary-glow/20 shadow-industrial",
         whatsapp: "bg-success text-success-foreground hover:bg-success/90 shadow-card-industrial",
+        orcamento: "bg-primary text-primary-foreground hover:bg-primary-glow shadow-industrial font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -72,7 +72,7 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 pt-2 lg:pt-4">
               <Button 
-                variant="hero" 
+                variant="orcamento" 
                 size="lg" 
                 className="text-sm lg:text-lg px-6 py-4 lg:px-8 lg:py-6 group"
                 onClick={handleOrcamento}

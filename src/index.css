@@ -20,14 +20,14 @@
     --primary-foreground: 0 0% 96%;
     --primary-glow: 210 20% 30%;
 
-    /* Secondary - Orange from palette */
-    --secondary: 22 85% 55%;
+    /* Secondary - Charcoal Gray from palette */
+    --secondary: 210 8% 35%;
     --secondary-foreground: 0 0% 96%;
 
-    /* Accent - Charcoal Gray from palette */
-    --accent: 210 8% 35%;
+    /* Accent - Orange from palette */
+    --accent: 22 85% 55%;
     --accent-foreground: 0 0% 96%;
-    --accent-hover: 210 8% 30%;
+    --accent-hover: 22 80% 50%;
 
     /* Muted - Medium Gray from palette */
     --muted: 210 8% 75%;
@@ -93,7 +93,7 @@
     --muted: 210 20% 22%;
     --muted-foreground: 210 15% 65%;
 
-    --accent: 200 35% 50%;
+    --accent: 22 75% 60%;
     --accent-foreground: 210 25% 15%;
 
     --destructive: 0 70% 60%;

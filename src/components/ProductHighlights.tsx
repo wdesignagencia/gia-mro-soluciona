@@ -50,14 +50,14 @@ const ProductHighlights = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 flex flex-col h-full"
+              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 flex flex-col h-full overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader className="text-center pb-4">
+              <CardHeader className="text-center pb-4 p-4 sm:p-6">
                 <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-4">
                   <product.icon className="h-8 w-8 text-white" />
                 </div>
@@ -68,10 +68,10 @@ const ProductHighlights = () => {
                   {product.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex flex-col flex-grow">
-                <div className="space-y-2 mb-4 flex-grow">
+              <CardContent className="flex flex-col flex-grow p-4 sm:p-6">
+                <div className="flex flex-wrap gap-1.5 mb-4 flex-grow">
                   {product.keywords.map((keyword, idx) => (
-                    <div key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full inline-block mr-1">
+                    <div key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full whitespace-nowrap">
                       {keyword}
                     </div>
                   ))}
@@ -79,7 +79,7 @@ const ProductHighlights = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="w-full hover:bg-primary hover:text-primary-foreground mt-auto"
+                  className="w-full hover:bg-primary hover:text-primary-foreground mt-auto text-xs sm:text-sm"
                   onClick={() => navigate('/produtos')}
                 >
                   Ver Catálogo
@@ -94,15 +94,15 @@ const ProductHighlights = () => {
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
             Atendemos Diversos Setores Industriais
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 text-center">
             {["Mineração", "Siderurgia", "Petroquímica", "Alimentícia", "Química", "Têxtil"].map((sector, index) => (
-              <div key={index} className="p-3 bg-gradient-steel rounded-lg">
-                <span className="text-sm font-medium text-foreground">{sector}</span>
+              <div key={index} className="p-2 sm:p-3 bg-gradient-steel rounded-lg">
+                <span className="text-xs sm:text-sm font-medium text-foreground">{sector}</span>
               </div>
             ))}
           </div>
           <div className="text-center mt-6">
-            <Button variant="hero" size="lg" onClick={handleWhatsApp}>
+            <Button variant="hero" size="lg" className="text-xs sm:text-sm md:text-base px-4 py-3 sm:px-6 sm:py-4" onClick={handleWhatsApp}>
               Consultar Aplicação no Seu Setor
             </Button>
           </div>

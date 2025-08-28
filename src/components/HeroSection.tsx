@@ -29,7 +29,7 @@ const HeroSection = () => {
           alt="Instalações industriais modernas da GIA MRO"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/40 to-primary/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50"></div>
       </div>
 
       {/* Content */}
@@ -46,7 +46,6 @@ const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-3 lg:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                GIA
                 <span className="block text-accent">Mangueiras, Correias</span>
                 <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-white/90">
                   e Mangotes Industriais

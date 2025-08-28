@@ -42,15 +42,15 @@ const KeyDifferentials = () => {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-20 bg-primary/5 relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="/lovable-uploads/71bc1e17-59f6-46a3-8a2a-70f543a66b36.png"
           alt="Industrial hoses background"
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-7"
         />
-        <div className="absolute inset-0 bg-background/80"></div>
+        <div className="absolute inset-0 bg-background/50"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

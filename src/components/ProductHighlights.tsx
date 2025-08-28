@@ -38,7 +38,7 @@ const ProductHighlights = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="py-20 bg-primary/3 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -90,7 +90,12 @@ const ProductHighlights = () => {
         </div>
 
         {/* Industry Focus */}
-        <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50">
+        <div className="bg-primary/10 rounded-2xl p-8 shadow-lg border border-primary/20 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-transparent to-accent"></div>
+          </div>
+          <div className="relative z-10">
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
             Atendemos Diversos Setores Industriais
           </h3>
@@ -105,6 +110,7 @@ const ProductHighlights = () => {
             <Button variant="hero" size="lg" className="text-xs sm:text-sm md:text-base px-4 py-3 sm:px-6 sm:py-4" onClick={handleWhatsApp}>
               Consultar Aplicação no Seu Setor
             </Button>
+          </div>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ const HeroSection = () => {
           alt="Instalações industriais modernas da GIA MRO"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/40 to-primary/20"></div>
       </div>
 
       {/* Content */}

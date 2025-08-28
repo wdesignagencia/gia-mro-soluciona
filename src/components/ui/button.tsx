@@ -19,10 +19,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Industrial variants
-        hero: "bg-gradient-accent text-accent-foreground hover:bg-accent-hover shadow-accent-glow font-semibold",
+        hero: "bg-gradient-accent text-accent-foreground hover:bg-accent-hover shadow-accent font-semibold",
         industrial: "bg-primary text-primary-foreground hover:bg-primary-glow border border-primary-glow/20 shadow-industrial",
-        whatsapp: "bg-success text-success-foreground hover:bg-success/90 shadow-card-industrial",
-        orcamento: "bg-primary text-primary-foreground hover:bg-primary-glow shadow-industrial font-semibold",
+        whatsapp: "bg-success text-success-foreground hover:bg-success/90 shadow-card",
+        orcamento: "bg-accent text-accent-foreground hover:bg-accent-hover shadow-accent font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

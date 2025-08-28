@@ -94,42 +94,43 @@ const HeroSection = () => {
               </Button>
             </div>
 
-          </div>
-
-          {/* Right Column - Small Stats Cards */}
-          <div className="flex justify-center items-center mt-8 lg:mt-0">
-            <div className="grid grid-cols-1 gap-4 w-full max-w-xs">
+            {/* Stats Cards - Below Buttons, Side by Side */}
+            <div className="flex justify-center gap-4 pt-6 lg:pt-8">
               <div 
-                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-3 lg:p-4 shadow-xl text-center 
                            animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
-                           transition-all duration-300 cursor-pointer group"
+                           transition-all duration-300 cursor-pointer group flex-1 max-w-[100px]"
                 style={{ animationDelay: '0.2s' }}
               >
-                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-200">20+</div>
+                <div className="text-xl lg:text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-200">20+</div>
                 <div className="text-xs font-medium text-foreground/90">Anos de Experiência</div>
               </div>
               
               <div 
-                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-3 lg:p-4 shadow-xl text-center 
                            animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
-                           transition-all duration-300 cursor-pointer group"
+                           transition-all duration-300 cursor-pointer group flex-1 max-w-[100px]"
                 style={{ animationDelay: '0.4s' }}
               >
-                <div className="text-2xl font-bold text-secondary mb-1 group-hover:scale-110 transition-transform duration-200">3</div>
+                <div className="text-xl lg:text-2xl font-bold text-secondary mb-1 group-hover:scale-110 transition-transform duration-200">3</div>
                 <div className="text-xs font-medium text-foreground/90">Anos no Mercado</div>
               </div>
               
               <div 
-                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-xl text-center 
+                className="bg-background/80 backdrop-blur-md border border-border/50 rounded-xl p-3 lg:p-4 shadow-xl text-center 
                            animate-fade-in hover:scale-105 hover:bg-background/90 hover:shadow-2xl 
-                           transition-all duration-300 cursor-pointer group"
+                           transition-all duration-300 cursor-pointer group flex-1 max-w-[100px]"
                 style={{ animationDelay: '0.6s' }}
               >
-                <div className="text-2xl font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-200">100km</div>
+                <div className="text-xl lg:text-2xl font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-200">100km</div>
                 <div className="text-xs font-medium text-foreground/90">Entrega Gratuita</div>
               </div>
             </div>
+
           </div>
+
+          {/* Right Column - Empty now, keeps layout balance */}
+          <div className="hidden lg:block"></div>
         </div>
       </div>
 

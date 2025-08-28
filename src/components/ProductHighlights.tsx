@@ -69,11 +69,11 @@ const ProductHighlights = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col flex-grow p-4 sm:p-6">
-                <div className="flex flex-wrap gap-1.5 mb-4 flex-grow">
+                <div className="flex flex-wrap gap-1.5 mb-4 flex-grow items-start">
                   {product.keywords.map((keyword, idx) => (
-                    <div key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full whitespace-nowrap">
+                    <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full whitespace-nowrap inline-block">
                       {keyword}
-                    </div>
+                    </span>
                   ))}
                 </div>
                 <Button 

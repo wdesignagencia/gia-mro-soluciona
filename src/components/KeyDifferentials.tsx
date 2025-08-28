@@ -48,7 +48,7 @@ const KeyDifferentials = () => {
         <img
           src="/lovable-uploads/71bc1e17-59f6-46a3-8a2a-70f543a66b36.png"
           alt="Industrial hoses background"
-          className="w-full h-full object-cover opacity-[8%]"
+          className="w-full h-full object-cover opacity-[10%]"
         />
         <div className="absolute inset-0 bg-background/25"></div>
       </div>

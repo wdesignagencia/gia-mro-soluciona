@@ -92,7 +92,7 @@ const ProductHighlights = () => {
         {/* Industry Focus */}
         <div className="bg-primary/10 rounded-2xl p-8 shadow-lg border border-primary/20 relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-[8%]">
+          <div className="absolute inset-0 opacity-[10%]">
             <div className="absolute inset-0 bg-gradient-to-br from-primary via-transparent to-accent"></div>
           </div>
           <div className="relative z-10">

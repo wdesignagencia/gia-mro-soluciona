@@ -1,4 +1,4 @@
-import { Wrench, Cog, Shield, Truck } from "lucide-react";
+import { Waves, Settings2, Layers, Shapes } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -12,25 +12,25 @@ const ProductHighlights = () => {
 
   const products = [
     {
-      icon: Wrench,
+      icon: Waves,
       title: "Mangueiras Borracha e PVC",
       description: "Mangueiras para sucção, óleo, água e ar comprimido",
       keywords: ["mangueira borracha", "mangueira PVC", "mangueira sucção", "mangueira para óleo"]
     },
     {
-      icon: Cog,
+      icon: Settings2,
       title: "Correias Industriais",
       description: "Correias em V, sincronizadoras e transportadoras",
       keywords: ["correia em V", "correia sincronizadora", "correias industriais"]
     },
     {
-      icon: Shield,
+      icon: Layers,
       title: "Mangotes e Lençóis",
       description: "Mangotes flangeados para draga e lençóis de borracha",
       keywords: ["mangote flangeado", "mangote borracha", "lençol de borracha", "manta borracha"]
     },
     {
-      icon: Truck,
+      icon: Shapes,
       title: "Plásticos de Engenharia",
       description: "Tarugos de nylon, chapas acrílicas e polipropileno",
       keywords: ["tarugo de nylon", "chapa acrílica", "polipropileno", "chapa de nylon"]

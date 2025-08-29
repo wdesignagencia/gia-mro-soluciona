@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import { Package, ArrowRight } from "lucide-react";
+import { Package, ArrowRight, Waves, Settings2, Layers, Shapes, ShieldCheck, Archive } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -33,7 +33,7 @@ const Products = () => {
       id: "mangueiras",
       title: "Mangueiras e Mangotes Industriais",
       description: "Soluções completas para transporte de fluidos industriais",
-      icon: "🔧",
+      icon: Waves,
       color: "bg-blue-500",
       products: [
         {
@@ -66,7 +66,7 @@ const Products = () => {
       id: "correias",
       title: "Correias Industriais",
       description: "Transmissão de potência para todos os tipos de equipamentos",
-      icon: "⚙️",
+      icon: Settings2,
       color: "bg-green-500",
       products: [
         {
@@ -93,7 +93,7 @@ const Products = () => {
       id: "lencois",
       title: "Lençóis e Mantas de Borracha",
       description: "Vedação e proteção para equipamentos industriais",
-      icon: "🛡️",
+      icon: Layers,
       color: "bg-purple-500",
       products: [
         {
@@ -132,7 +132,7 @@ const Products = () => {
       id: "plasticos",
       title: "Plásticos de Engenharia",
       description: "Materiais técnicos para aplicações especializadas",
-      icon: "🔬",
+      icon: Shapes,
       color: "bg-orange-500",
       products: [
         {
@@ -159,7 +159,7 @@ const Products = () => {
       id: "vedacoes",
       title: "Vedações",
       description: "Soluções especializadas para vedação industrial",
-      icon: "🔒",
+      icon: ShieldCheck,
       color: "bg-indigo-500",
       products: [
         {
@@ -180,7 +180,7 @@ const Products = () => {
       id: "complementares",
       title: "Produtos Complementares",
       description: "Soluções adicionais para completar sua operação",
-      icon: "📦",
+      icon: Archive,
       color: "bg-red-500",
       products: [
         {
@@ -292,7 +292,7 @@ const Products = () => {
                   {/* Category Header */}
                   <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/15 to-blue-500/15 text-primary rounded-full px-6 py-3 text-lg font-bold mb-6 shadow-lg border border-blue-200/30 dark:border-blue-800/30">
-                      <span className="text-3xl">{category.icon}</span>
+                      <category.icon className="h-8 w-8" />
                       {category.title}
                     </div>
                     <p className="text-muted-foreground text-xl font-medium max-w-2xl mx-auto">
@@ -313,7 +313,7 @@ const Products = () => {
                           <div className="flex items-center gap-4">
                             <div className="flex-shrink-0">
                               <div className="w-16 h-16 bg-gradient-to-br from-primary/20 via-blue-400/15 to-primary/10 rounded-xl flex items-center justify-center border border-blue-200/20 dark:border-blue-800/20">
-                                <span className="text-2xl">{category.icon}</span>
+                                <category.icon className="h-8 w-8 text-primary" />
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
@@ -368,7 +368,7 @@ const Products = () => {
                           {/* Product Icon/Visual */}
                           <div className="flex-shrink-0">
                             <div className="w-20 h-20 bg-gradient-to-br from-primary/20 via-blue-400/15 to-primary/10 rounded-2xl flex items-center justify-center border border-blue-200/20 dark:border-blue-800/20">
-                              <span className="text-3xl">{category.icon}</span>
+                              <category.icon className="h-10 w-10 text-primary" />
                             </div>
                           </div>
 

@@ -2,17 +2,28 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProductSearch } from "@/components/ProductSearch";
 import { cn } from "@/lib/utils";
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
   const handleWhatsApp = () => {
     window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre mangueiras, correias e mangotes industriais.', '_blank');
   };
+
   const handleOrcamento = () => {
     navigate('/contato');
   };
+
+  const handleGlobalSearch = (searchTerm: string) => {
+    if (searchTerm.trim()) {
+      navigate(`/produtos?busca=${encodeURIComponent(searchTerm)}`);
+    }
+  };
+
   const navItems = [{
     href: "/",
     label: "Home"
@@ -29,8 +40,11 @@ const Navigation = () => {
     href: "/contato",
     label: "Contato"
   }];
+
   const isActive = (path: string) => location.pathname === path;
-  return <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-card-industrial">
+
+  return (
+    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-card-industrial">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -43,14 +57,41 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => <Link key={item.href} to={item.href} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(item.href) ? "text-primary border-b-2 border-accent pb-1" : "text-muted-foreground")}>
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map(item => 
+              <Link 
+                key={item.href} 
+                to={item.href} 
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary", 
+                  isActive(item.href) 
+                    ? "text-primary border-b-2 border-accent pb-1" 
+                    : "text-muted-foreground"
+                )}
+              >
                 {item.label}
-              </Link>)}
+              </Link>
+            )}
           </div>
 
-          {/* Desktop Action Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Search Bar - Medium screens */}
+          <div className="hidden md:block lg:hidden">
+            <ProductSearch
+              variant="navigation"
+              placeholder="Buscar produtos..."
+              onSearch={handleGlobalSearch}
+              className="w-64"
+            />
+          </div>
+
+          {/* Desktop Search + Action Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <ProductSearch
+              variant="navigation"
+              placeholder="Buscar produtos..."
+              onSearch={handleGlobalSearch}
+              className="w-64"
+            />
             <Button variant="whatsapp" size="sm" className="flex items-center gap-2" onClick={handleWhatsApp}>
               <MessageCircle className="h-4 w-4" />
               WhatsApp
@@ -70,24 +111,60 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && <div className="md:hidden">
+        {isOpen && (
+          <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-              {navItems.map(item => <Link key={item.href} to={item.href} className={cn("block px-3 py-2 rounded-md text-sm font-medium transition-colors", isActive(item.href) ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-primary hover:bg-accent/50")} onClick={() => setIsOpen(false)}>
+              {/* Mobile Search */}
+              <div className="px-3 py-2">
+                <ProductSearch
+                  variant="navigation"
+                  placeholder="Buscar produtos..."
+                  onSearch={handleGlobalSearch}
+                  className="w-full"
+                />
+              </div>
+              
+              {navItems.map(item => 
+                <Link 
+                  key={item.href} 
+                  to={item.href} 
+                  className={cn(
+                    "block px-3 py-2 rounded-md text-sm font-medium transition-colors", 
+                    isActive(item.href) 
+                      ? "text-primary bg-primary/10" 
+                      : "text-muted-foreground hover:text-primary hover:bg-accent/50"
+                  )} 
+                  onClick={() => setIsOpen(false)}
+                >
                   {item.label}
-                </Link>)}
+                </Link>
+              )}
               <div className="flex flex-col space-y-2 px-3 pt-3">
-                <Button variant="whatsapp" size="sm" className="w-full justify-center" onClick={handleWhatsApp}>
+                <Button 
+                  variant="whatsapp" 
+                  size="sm" 
+                  className="w-full justify-center" 
+                  onClick={handleWhatsApp}
+                >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp
                 </Button>
-                <Button variant="hero" size="sm" className="w-full justify-center" onClick={handleOrcamento}>
+                <Button 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-full justify-center" 
+                  onClick={handleOrcamento}
+                >
                   <Phone className="h-4 w-4 mr-2" />
                   Solicitar Orçamento
                 </Button>
               </div>
             </div>
-          </div>}
+          </div>
+        )}
       </div>
-    </nav>;
+    </nav>
+  );
 };
+
 export default Navigation;

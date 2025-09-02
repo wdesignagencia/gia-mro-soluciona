@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import { Package, ArrowRight, Waves, Settings2, Layers, Shapes, ShieldCheck, Archive } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SEOHead } from "@/components/SEOHead";
+import { ProductSearch } from "@/components/ProductSearch";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 const Products = () => {
@@ -20,11 +21,15 @@ const Products = () => {
     navigate('/contato');
   };
 
-  // Handle URL category parameter
+  // Handle URL parameters
   useEffect(() => {
     const categoria = searchParams.get('categoria');
+    const busca = searchParams.get('busca');
     if (categoria) {
       setSelectedCategory(categoria);
+    }
+    if (busca) {
+      setSearchTerm(busca);
     }
   }, [searchParams]);
 
@@ -209,9 +214,50 @@ const Products = () => {
     { id: "complementares", name: "Complementares" }
   ];
 
-  const filteredCategories = productCategories.filter(category => 
-    selectedCategory === "all" || category.id === selectedCategory
-  );
+  // Enhanced filtering with search functionality
+  const filteredCategories = useMemo(() => {
+    let filtered = productCategories;
+
+    // Filter by category
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter(category => category.id === selectedCategory);
+    }
+
+    // Filter by search term
+    if (searchTerm.trim()) {
+      const searchLower = searchTerm.toLowerCase().trim();
+      filtered = filtered.map(category => {
+        const matchingProducts = category.products.filter(product => {
+          // Search in product name, description, specs, and applications
+          const searchableText = [
+            product.name,
+            product.description,
+            ...product.specs,
+            ...product.applications,
+            category.title,
+            category.description
+          ].join(' ').toLowerCase();
+          
+          return searchableText.includes(searchLower);
+        });
+
+        if (matchingProducts.length > 0) {
+          return {
+            ...category,
+            products: matchingProducts
+          };
+        }
+        
+        // Also check if category itself matches
+        const categoryMatches = [category.title, category.description]
+          .join(' ').toLowerCase().includes(searchLower);
+        
+        return categoryMatches ? category : null;
+      }).filter(Boolean) as typeof productCategories;
+    }
+
+    return filtered;
+  }, [productCategories, selectedCategory, searchTerm]);
 
   const productStructuredData = {
     "@context": "https://schema.org",
@@ -259,6 +305,16 @@ const Products = () => {
                 de manutenção, reparo e operação da sua empresa. Temos muito mais produtos disponíveis - entre em contato!
               </p>
 
+              {/* Search Bar */}
+              <div className="max-w-4xl mx-auto mb-8">
+                <ProductSearch
+                  placeholder="Buscar produtos, especificações ou aplicações..."
+                  onSearch={setSearchTerm}
+                  value={searchTerm}
+                  showClearButton={true}
+                />
+              </div>
+
               {/* Filter Categories */}
               <div className="max-w-4xl mx-auto">
                 <div className="flex gap-2 flex-wrap justify-center mb-6">
@@ -282,8 +338,43 @@ const Products = () => {
         {/* Products Section */}
         <section className="py-16 bg-gradient-to-br from-background via-blue-50/20 to-primary/5 dark:from-background dark:via-blue-950/10 dark:to-primary/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Search Results Counter */}
+            {searchTerm && (
+              <div className="text-center mb-8">
+                <p className="text-muted-foreground">
+                  {filteredCategories.length === 0 
+                    ? `Nenhum resultado encontrado para "${searchTerm}"`
+                    : `${filteredCategories.reduce((acc, cat) => acc + cat.products.length, 0)} produto(s) encontrado(s) para "${searchTerm}"`
+                  }
+                </p>
+              </div>
+            )}
+
             <div className="space-y-16">
-              {filteredCategories.map((category, categoryIndex) => (
+              {filteredCategories.length === 0 && searchTerm ? (
+                <div className="text-center py-16">
+                  <div className="max-w-md mx-auto">
+                    <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Package className="h-12 w-12 text-muted-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      Nenhum produto encontrado
+                    </h3>
+                    <p className="text-muted-foreground mb-6">
+                      Não encontramos produtos que correspondam à sua pesquisa. Tente termos diferentes ou entre em contato conosco.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <Button onClick={() => setSearchTerm("")} variant="outline">
+                        Limpar busca
+                      </Button>
+                      <Button onClick={handleOrcamento}>
+                        Falar com especialista
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                filteredCategories.map((category, categoryIndex) => (
                 <div 
                   key={category.id}
                   className="bg-gradient-to-br from-background/90 via-blue-50/30 to-primary/5 dark:from-background/90 dark:via-blue-950/20 dark:to-primary/5 border-2 border-primary/20 backdrop-blur-sm rounded-[40px] p-8 md:p-12 shadow-[0_0_30px_rgba(0,0,0,0.1),0_0_50px_rgba(59,130,246,0.05)] animate-fade-in"
@@ -454,7 +545,8 @@ const Products = () => {
                     </Button>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
           </div>
         </section>

@@ -13,7 +13,7 @@ const ExitIntentModal = ({
   const [isClosing, setIsClosing] = useState(false);
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá! Vi seu site e gostaria de tirar algumas dúvidas sobre MRO e peças industriais. Podem me ajudar?');
-    const whatsappUrl = `https://wa.me/5511999999999?text=${message}`;
+    const whatsappUrl = `https://wa.me/5511947543023?text=${message}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };

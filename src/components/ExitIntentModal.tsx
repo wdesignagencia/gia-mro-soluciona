@@ -2,24 +2,21 @@ import { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, X, Clock, Users, CheckCircle } from 'lucide-react';
-
 interface ExitIntentModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const ExitIntentModal = ({ isOpen, onClose }: ExitIntentModalProps) => {
+const ExitIntentModal = ({
+  isOpen,
+  onClose
+}: ExitIntentModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
-
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      'Olá! Vi seu site e gostaria de tirar algumas dúvidas sobre MRO e peças industriais. Podem me ajudar?'
-    );
+    const message = encodeURIComponent('Olá! Vi seu site e gostaria de tirar algumas dúvidas sobre MRO e peças industriais. Podem me ajudar?');
     const whatsappUrl = `https://wa.me/5511999999999?text=${message}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };
-
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
@@ -27,9 +24,7 @@ const ExitIntentModal = ({ isOpen, onClose }: ExitIntentModalProps) => {
       setIsClosing(false);
     }, 300);
   };
-
-  return (
-    <Dialog open={isOpen} onOpenChange={handleClose}>
+  return <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className={`
         max-w-md mx-auto p-0 gap-0 border-0 bg-transparent shadow-none
         ${isClosing ? 'animate-scale-out' : 'animate-scale-in'}
@@ -37,11 +32,7 @@ const ExitIntentModal = ({ isOpen, onClose }: ExitIntentModalProps) => {
         <div className="relative bg-background border border-border rounded-xl shadow-industrial overflow-hidden">
           {/* Header with gradient */}
           <div className="bg-gradient-accent p-6 text-center relative">
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-accent-foreground/60 hover:text-accent-foreground transition-colors p-1 rounded-full hover:bg-black/10"
-              aria-label="Fechar"
-            >
+            <button onClick={handleClose} className="absolute top-4 right-4 text-accent-foreground/60 hover:text-accent-foreground transition-colors p-1 rounded-full hover:bg-black/10" aria-label="Fechar">
               <X className="w-5 h-5" />
             </button>
             
@@ -85,37 +76,23 @@ const ExitIntentModal = ({ isOpen, onClose }: ExitIntentModalProps) => {
 
             {/* CTA Buttons */}
             <div className="space-y-3 pt-2">
-              <Button
-                variant="whatsapp"
-                size="lg"
-                onClick={handleWhatsAppClick}
-                className="w-full text-base font-semibold hover-scale"
-              >
+              <Button variant="whatsapp" size="lg" onClick={handleWhatsAppClick} className="w-full text-base font-semibold hover-scale">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar no WhatsApp Agora
               </Button>
               
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleClose}
-                className="w-full text-muted-foreground hover:text-foreground"
-              >
+              <Button variant="ghost" size="sm" onClick={handleClose} className="w-full text-muted-foreground hover:text-foreground">
                 Continuar Navegando
               </Button>
             </div>
 
             {/* Trust indicator */}
             <div className="text-center pt-2">
-              <p className="text-xs text-muted-foreground">
-                Milhares de empresas confiam em nós
-              </p>
+              <p className="text-xs text-muted-foreground">Faça como muitos que acreditaram e hoje são nossos clientes e parceiros.</p>
             </div>
           </div>
         </div>
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
-
 export default ExitIntentModal;

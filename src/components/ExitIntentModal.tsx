@@ -8,10 +8,12 @@ import { useToast } from '@/hooks/use-toast';
 interface ExitIntentModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onMarkAsShown: () => void;
 }
 const ExitIntentModal = ({
   isOpen,
-  onClose
+  onClose,
+  onMarkAsShown
 }: ExitIntentModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -57,6 +59,7 @@ const ExitIntentModal = ({
     
     if (success) {
       setIsSubmitted(true);
+      onMarkAsShown(); // Mark as shown only on successful conversion
       toast({
         title: "Desconto garantido!",
         description: "Entraremos em contato em breve com sua oferta especial.",

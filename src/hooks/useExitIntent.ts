@@ -26,18 +26,21 @@ export const useExitIntent = (options: UseExitIntentOptions = {}) => {
   const shouldExclude = excludePaths.some(path => currentPath.includes(path));
 
   const triggerExitIntent = useCallback(() => {
-    if (!enabled || hasBeenShown || shouldExclude || !isActive) return;
+    if (!enabled || shouldExclude || !isActive) return;
     
     setIsTriggered(true);
-    localStorage.setItem('exit-intent-shown', 'true');
-  }, [enabled, hasBeenShown, shouldExclude, isActive]);
+  }, [enabled, shouldExclude, isActive]);
 
   const resetExitIntent = useCallback(() => {
     setIsTriggered(false);
   }, []);
 
+  const markAsShown = useCallback(() => {
+    localStorage.setItem('exit-intent-shown', 'true');
+  }, []);
+
   useEffect(() => {
-    if (!enabled || hasBeenShown || shouldExclude) return;
+    if (!enabled || shouldExclude) return;
 
     // Activate after delay
     const activationTimer = setTimeout(() => {
@@ -45,7 +48,7 @@ export const useExitIntent = (options: UseExitIntentOptions = {}) => {
     }, delay);
 
     return () => clearTimeout(activationTimer);
-  }, [enabled, hasBeenShown, shouldExclude, delay]);
+  }, [enabled, shouldExclude, delay]);
 
   useEffect(() => {
     if (!isActive) return;
@@ -121,6 +124,7 @@ export const useExitIntent = (options: UseExitIntentOptions = {}) => {
   return {
     isTriggered,
     resetExitIntent,
+    markAsShown,
     hasBeenShown
   };
 };

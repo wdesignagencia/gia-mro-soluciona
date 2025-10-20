@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useEmailJS } from "@/hooks/useEmailJS";
 import { SEOHead } from "@/components/SEOHead";
 const Contact = () => {
   const contactStructuredData = {
@@ -30,9 +31,8 @@ const Contact = () => {
       "yearsOfExperience": "20+"
     }
   };
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  const { sendContactLead, isLoading: isEmailLoading } = useEmailJS();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nomeCompleto: "",
@@ -122,10 +122,29 @@ const Contact = () => {
       return;
     }
 
-    // Create WhatsApp message
-    const productLabel = productOptions.find(p => p.value === formData.produtoInteresse)?.label || formData.produtoInteresse;
-    const otherProduct = formData.produtoInteresse === 'outros' ? `\n*Produto Específico:* ${formData.outrosProduto}` : '';
-    const message = `🏭 *SOLICITAÇÃO DE ORÇAMENTO - GIA MRO*
+    // 1. Send via EmailJS first (guaranteed capture)
+    const emailSent = await sendContactLead({
+      nomeCompleto: formData.nomeCompleto,
+      empresa: formData.empresa,
+      telefone: formData.telefone,
+      email: formData.email,
+      produtoInteresse: formData.produtoInteresse,
+      quantidadeEspecificacoes: formData.quantidadeEspecificacoes,
+      mensagem: formData.mensagem
+    });
+
+    if (emailSent) {
+      // 2. Show success toast
+      toast({
+        title: "✅ Dados recebidos!",
+        description: "Abrindo WhatsApp para contato imediato..."
+      });
+
+      // 3. Wait and redirect to WhatsApp
+      setTimeout(() => {
+        const productLabel = productOptions.find(p => p.value === formData.produtoInteresse)?.label || formData.produtoInteresse;
+        const otherProduct = formData.produtoInteresse === 'outros' ? `\n*Produto Específico:* ${formData.outrosProduto}` : '';
+        const message = `🏭 *SOLICITAÇÃO DE ORÇAMENTO - GIA MRO*
 
 *Nome:* ${formData.nomeCompleto}
 *Empresa:* ${formData.empresa}
@@ -141,35 +160,24 @@ ${formData.quantidadeEspecificacoes ? `*Especificações:* ${formData.quantidade
 ---
 Enviado através do site www.giamro.com.br`;
 
-    // Send to WhatsApp
-    const whatsappNumber = "5511947543023";
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    try {
-      // Open WhatsApp
-      window.open(whatsappUrl, '_blank');
-      toast({
-        title: "Redirecionando para WhatsApp!",
-        description: "Sua mensagem foi preparada. Nossa equipe responderá em breve!"
-      });
+        const whatsappNumber = "5511947543023";
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
 
-      // Reset form
-      setFormData({
-        nomeCompleto: "",
-        empresa: "",
-        telefone: "",
-        email: "",
-        produtoInteresse: "",
-        outrosProduto: "",
-        quantidadeEspecificacoes: "",
-        mensagem: ""
-      });
-    } catch (error) {
-      toast({
-        title: "Erro ao abrir WhatsApp",
-        description: "Tente novamente ou entre em contato diretamente: (11) 94754-3023",
-        variant: "destructive"
-      });
-    } finally {
+        // Reset form
+        setFormData({
+          nomeCompleto: "",
+          empresa: "",
+          telefone: "",
+          email: "",
+          produtoInteresse: "",
+          outrosProduto: "",
+          quantidadeEspecificacoes: "",
+          mensagem: ""
+        });
+        
+        setIsSubmitting(false);
+      }, 1500);
+    } else {
       setIsSubmitting(false);
     }
   };
@@ -341,7 +349,8 @@ Enviado através do site www.giamro.com.br`;
                   {/* Additional Info */}
                   <div className="text-center pt-4 text-sm text-muted-foreground">
                     <p className="mb-2">
-                      🔒 Seus dados estão seguros conosco e não serão compartilhados
+                      🔒 Ao enviar, você concorda em compartilhar seus dados para receber orçamento personalizado. 
+                      Seus dados são protegidos e não serão compartilhados com terceiros.
                     </p>
                     <p>
                       ⚡ Resposta <strong className="text-foreground">IMEDIATA</strong> via WhatsApp!

@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, MessageCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-industrial.jpg";
@@ -12,6 +12,13 @@ const HeroSection = () => {
 
   const handleOrcamento = () => {
     navigate('/contato');
+  };
+
+  const handleQuickQuote = () => {
+    const element = document.getElementById('quick-quote');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
   const differentials = [
     "20+ anos manutenção industrial",
@@ -90,6 +97,19 @@ const HeroSection = () => {
               >
                 <MessageCircle className="h-4 w-4 lg:h-5 lg:w-5 mr-2" />
                 Fale via WhatsApp
+              </Button>
+            </div>
+
+            {/* Quick Quote CTA */}
+            <div className="pt-2">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-sm lg:text-base px-6 py-3 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 hover:text-white"
+                onClick={handleQuickQuote}
+              >
+                <Sparkles className="h-4 w-4 mr-2" />
+                ⚡ Orçamento Rápido em 30 Segundos
               </Button>
             </div>
 

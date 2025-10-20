@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ProductHighlights from "@/components/ProductHighlights";
+import QuickQuoteForm from "@/components/QuickQuoteForm";
 import KeyDifferentials from "@/components/KeyDifferentials";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -83,6 +84,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProductHighlights />
+        <QuickQuoteForm />
         <KeyDifferentials />
       </main>
       <Footer />

@@ -4,6 +4,7 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductSearch } from "@/components/ProductSearch";
 import { cn } from "@/lib/utils";
+import giaLogo from "@/assets/gia-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/bc4bfb01-72a0-48f4-9112-e877622b0b14.png" 
+              src={giaLogo} 
               alt="GIA MRO - Soluções em Manutenção Industrial" 
               className="h-10 w-auto"
             />

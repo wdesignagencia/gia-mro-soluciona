@@ -15,7 +15,7 @@ declare global {
 export const trackConversion = (conversionLabel: string, value?: number) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'conversion', {
-      'send_to': `AW-17527117768/${conversionLabel}`,
+      'send_to': ['AW-17527117768/ZcUACJr7m74bEMivyqVB'],
       'value': value || 1.0,
       'currency': 'BRL'
     });

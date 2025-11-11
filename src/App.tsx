@@ -29,7 +29,7 @@ const ScrollToTop = () => {
 const AppContent = () => {
   const { isTriggered, resetExitIntent, markAsShown } = useExitIntent({
     enabled: true,
-    delay: 10000, // 10 seconds
+    delay: 1000, // 1 second
     excludePaths: ['/contato', '/contact']
   });
 

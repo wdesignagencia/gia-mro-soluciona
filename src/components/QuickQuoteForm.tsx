@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { trackConversion, CONVERSION_LABELS } from "@/lib/gtag";
+import { gtag_report_conversion } from "@/lib/gtag";
 
 const QuickQuoteForm = () => {
   const { toast } = useToast();
@@ -45,16 +45,13 @@ const QuickQuoteForm = () => {
     const emailSent = await sendQuickLead(formData);
 
     if (emailSent) {
-      // 2. Track conversion
-      trackConversion(CONVERSION_LABELS.FORM_QUICK_SUBMIT);
-      
-      // 3. Mostra toast de sucesso
+      // Mostra toast de sucesso
       toast({
         title: "✅ Dados recebidos!",
         description: "Redirecionando para WhatsApp em instantes..."
       });
 
-      // 3. Aguarda 1.5s e redireciona para WhatsApp
+      // Aguarda 1.5s e redireciona para WhatsApp com tracking de conversão
       setTimeout(() => {
         const productLabel = productOptions.find(p => p.value === formData.product)?.label || formData.product;
         const message = `🏭 *SOLICITAÇÃO DE ORÇAMENTO RÁPIDO - GIA MRO*
@@ -69,7 +66,7 @@ Gostaria de receber um orçamento personalizado!
 Enviado através do site www.giamro.com.br`;
 
         const whatsappNumber = "5511947543023";
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        gtag_report_conversion(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
 
         // Reset form
         setFormData({ name: "", whatsapp: "", product: "" });

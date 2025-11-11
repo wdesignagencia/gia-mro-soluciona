@@ -96,18 +96,14 @@ const Contact = () => {
     }));
   };
   const handleContactAction = (method: any) => {
-    // Track conversion BEFORE redirect
     if (method.title === "Telefone") {
-      trackConversion(CONVERSION_LABELS.PHONE_CLICK);
-      window.open(`tel:${method.contact}`, '_self');
+      gtag_report_conversion(`tel:${method.contact}`);
     } else if (method.title === "WhatsApp") {
-      trackConversion(CONVERSION_LABELS.WHATSAPP_CLICK);
       const message = "Olá! Gostaria de mais informações sobre os produtos GIA MRO.";
       const whatsappNumber = "5511947543023";
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+      gtag_report_conversion(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
     } else if (method.title === "E-mail") {
-      trackConversion(CONVERSION_LABELS.EMAIL_CLICK);
-      window.open(`mailto:${method.contact}?subject=Contato pelo site GIA MRO`, '_self');
+      gtag_report_conversion(`mailto:${method.contact}?subject=Contato pelo site GIA MRO`);
     }
   };
   const handleSubmit = async (e: React.FormEvent) => {
@@ -139,16 +135,13 @@ const Contact = () => {
     });
 
     if (emailSent) {
-      // 2. Track conversion
-      trackConversion(CONVERSION_LABELS.FORM_CONTACT_SUBMIT);
-      
-      // 3. Show success toast
+      // Show success toast
       toast({
         title: "✅ Dados recebidos!",
         description: "Abrindo WhatsApp para contato imediato..."
       });
 
-      // 3. Wait and redirect to WhatsApp
+      // Wait and redirect to WhatsApp with conversion tracking
       setTimeout(() => {
         const productLabel = productOptions.find(p => p.value === formData.produtoInteresse)?.label || formData.produtoInteresse;
         const otherProduct = formData.produtoInteresse === 'outros' ? `\n*Produto Específico:* ${formData.outrosProduto}` : '';
@@ -169,7 +162,7 @@ ${formData.quantidadeEspecificacoes ? `*Especificações:* ${formData.quantidade
 Enviado através do site www.giamro.com.br`;
 
         const whatsappNumber = "5511947543023";
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        gtag_report_conversion(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
 
         // Reset form
         setFormData({

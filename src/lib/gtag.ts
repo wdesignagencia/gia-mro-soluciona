@@ -8,31 +8,29 @@ declare global {
 }
 
 /**
- * Tracks a conversion event in Google Ads
- * @param conversionLabel - The conversion label configured in Google Ads
- * @param value - Optional conversion value (defaults to 1.0)
+ * Tracks a conversion event in Google Ads with callback support
+ * @param url - Optional URL to redirect to after conversion is tracked
  */
-export const trackConversion = (conversionLabel: string, value?: number) => {
+export const gtag_report_conversion = (url?: string) => {
+  const callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location.href = url;
+    }
+  };
+  
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'conversion', {
-      'send_to': ['AW-17527117768/ZcUACJr7m74bEMivyqVB'],
-      'value': value || 1.0,
-      'currency': 'BRL'
+      'send_to': 'AW-17527117768/wknbCOvwlL4bEMivyqVB',
+      'event_callback': callback
     });
-    console.log(`✅ Conversão Google Ads rastreada: ${conversionLabel}`);
+    console.log(`✅ Conversão Google Ads rastreada`);
   } else {
     console.warn('⚠️ Google Ads gtag não está disponível');
+    // Se gtag não estiver disponível, redireciona mesmo assim
+    if (url) {
+      window.location.href = url;
+    }
   }
+  return false;
 };
 
-/**
- * Predefined conversion labels for different user actions
- * These labels must match the conversion actions created in Google Ads
- */
-export const CONVERSION_LABELS = {
-  WHATSAPP_CLICK: 'whatsapp_click',
-  PHONE_CLICK: 'phone_click',
-  EMAIL_CLICK: 'email_click',
-  FORM_CONTACT_SUBMIT: 'form_contact_submit',
-  FORM_QUICK_SUBMIT: 'form_quick_submit'
-};

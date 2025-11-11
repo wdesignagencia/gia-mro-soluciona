@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useEmailJS } from "@/hooks/useEmailJS";
 import { SEOHead } from "@/components/SEOHead";
+import { trackConversion, CONVERSION_LABELS } from "@/lib/gtag";
 const Contact = () => {
   const contactStructuredData = {
     "@context": "https://schema.org",
@@ -95,13 +96,17 @@ const Contact = () => {
     }));
   };
   const handleContactAction = (method: any) => {
+    // Track conversion BEFORE redirect
     if (method.title === "Telefone") {
+      trackConversion(CONVERSION_LABELS.PHONE_CLICK);
       window.open(`tel:${method.contact}`, '_self');
     } else if (method.title === "WhatsApp") {
+      trackConversion(CONVERSION_LABELS.WHATSAPP_CLICK);
       const message = "Olá! Gostaria de mais informações sobre os produtos GIA MRO.";
       const whatsappNumber = "5511947543023";
       window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
     } else if (method.title === "E-mail") {
+      trackConversion(CONVERSION_LABELS.EMAIL_CLICK);
       window.open(`mailto:${method.contact}?subject=Contato pelo site GIA MRO`, '_self');
     }
   };
@@ -134,7 +139,10 @@ const Contact = () => {
     });
 
     if (emailSent) {
-      // 2. Show success toast
+      // 2. Track conversion
+      trackConversion(CONVERSION_LABELS.FORM_CONTACT_SUBMIT);
+      
+      // 3. Show success toast
       toast({
         title: "✅ Dados recebidos!",
         description: "Abrindo WhatsApp para contato imediato..."

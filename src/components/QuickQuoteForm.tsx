@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { trackConversion, CONVERSION_LABELS } from "@/lib/gtag";
 
 const QuickQuoteForm = () => {
   const { toast } = useToast();
@@ -44,7 +45,10 @@ const QuickQuoteForm = () => {
     const emailSent = await sendQuickLead(formData);
 
     if (emailSent) {
-      // 2. Mostra toast de sucesso
+      // 2. Track conversion
+      trackConversion(CONVERSION_LABELS.FORM_QUICK_SUBMIT);
+      
+      // 3. Mostra toast de sucesso
       toast({
         title: "✅ Dados recebidos!",
         description: "Redirecionando para WhatsApp em instantes..."

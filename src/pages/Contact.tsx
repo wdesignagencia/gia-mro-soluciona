@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useEmailJS } from "@/hooks/useEmailJS";
 import { SEOHead } from "@/components/SEOHead";
-import { trackConversion, CONVERSION_LABELS } from "@/lib/gtag";
+import { gtag_report_conversion } from "@/lib/gtag";
 const Contact = () => {
   const contactStructuredData = {
     "@context": "https://schema.org",

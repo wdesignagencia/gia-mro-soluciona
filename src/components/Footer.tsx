@@ -1,8 +1,10 @@
+import { gtag_report_conversion } from "@/lib/gtag";
+
 const Footer = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá! Vi seu site e gostaria de tirar algumas dúvidas sobre MRO e peças industriais. Podem me ajudar?');
     const whatsappUrl = `https://wa.me/5511947543023?text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    gtag_report_conversion(whatsappUrl);
   };
 
   return (

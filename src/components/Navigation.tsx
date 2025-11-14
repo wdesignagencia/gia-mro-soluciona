@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ProductSearch } from "@/components/ProductSearch";
 import { cn } from "@/lib/utils";
 import giaLogo from "@/assets/gia-logo.png";
+import { gtag_report_conversion } from "@/lib/gtag";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre mangueiras, correias e mangotes industriais.', '_blank');
+    gtag_report_conversion('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre mangueiras, correias e mangotes industriais.');
   };
 
   const handleOrcamento = () => {

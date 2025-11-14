@@ -2,12 +2,13 @@ import { ArrowRight, CheckCircle, Phone, MessageCircle, Sparkles } from "lucide-
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-industrial.jpg";
+import { gtag_report_conversion } from "@/lib/gtag";
 
 const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre seus produtos industriais.', '_blank');
+    gtag_report_conversion('https://wa.me/5511947543023?text=Olá! Gostaria de mais informações sobre seus produtos industriais.');
   };
 
   const handleOrcamento = () => {
